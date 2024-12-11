@@ -1,0 +1,29 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "prenom": "Warda",
+        "nom": "Boubaker",
+        "fonction": "Responsable des études",
+        "email": "warda@gmail.com",
+        "adresse": "15 avn tn",
+        "password": "12345678",
+        "telephone": "11223344",
+        "dateNaissance": "01/01/1980",
+        "authToken": "token1"
+      },
+      {
+        "id": 2,
+        "prenom": "Djimo",
+        "nom": "Gassama",
+        "fonction": "Directeur",
+        "email": "djimo@gmail.com",
+        "adresse": "18 abn sn",
+        "password": "12345678",
+        "telephone": "55667788",
+        "dateNaissance": "18/03/1985",
+        "authToken": "token2"
+      }
+    ]
+  }
+  
