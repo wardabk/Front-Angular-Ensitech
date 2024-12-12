@@ -43,6 +43,8 @@
     padding-left: 10px;
     cursor: pointer;
     color: #012970;
+    position: relative;
+    z-index: 10;
 }
 
 .header .search-bar {
@@ -347,6 +349,12 @@
     border-radius: 4px;
 }
 
+.sidebar-nav .nav-link.active {
+    background-color: #012970;
+    color: #fff;
+    border-radius: 4px;
+}
+
 .sidebar-nav .nav-link i {
     font-size: 16px;
     margin-right: 10px;
@@ -486,6 +494,7 @@
         border-top: 1px solid #eaedf1;
         border-left: 1px solid #eaedf1;
     }
+
 }
 
 @keyframes dropdown-animate {
@@ -526,4 +535,9 @@
 .content {
     flex: 1;
     padding: 20px;
+}
+
+.screenContainer {
+    padding-top: 20px;
+
 }

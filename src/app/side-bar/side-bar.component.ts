@@ -9,24 +9,29 @@ import { User } from '../user';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent {
+
   isCollapsed = false;
   connectedUser: User | null = localStorage.getItem('connectedUser') ? JSON.parse(localStorage.getItem('connectedUser')!)
     : null;
-
   menuItems = [
-    { title: 'Dashboard', icon: 'fas fa-home', route: '/home' },
-    { title: 'Cours', icon: 'fas fa-user', route: '/cours' },
-    // { title: 'Settings', icon: 'fas fa-cog', route: '/protected/settings' },
+    { title: 'Etudiants', icon: 'fa-solid fa-graduation-cap', route: '/etudiants' },
+    { title: 'Enseignants', icon: 'fas fa-user', route: '/enseignants' },
+    { title: 'Cours', icon: 'fa-solid fa-book', route: '/cours' },
+    { title: 'Notes', icon: 'fa-solid fa-file-signature', route: '/notes' },
   ];
+  constructor(private authService: AuthService, private router: Router) {
+
+  }
   toggleSidebar() {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  constructor(private authService: AuthService, private router: Router) { }
+
 
   signOut(): void {
     this.authService.logout();
     this.router.navigate(['/signin']);
   }
+
 
 }

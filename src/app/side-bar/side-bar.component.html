@@ -1,6 +1,6 @@
 <header
   id="header"
-  class="menu_theme header fixed-top d-flex align-items-center"
+  class="header fixed-top d-flex align-items-center"
   *ngIf="connectedUser"
 >
   <!-- Start Logo div -->
@@ -8,7 +8,10 @@
     <a routerLink="/home" class="logo d-flex align-items-center">
       <span class="d-none d-lg-block">Ensitech</span>
     </a>
-    <i class="fa-solid fa-bars toggle-sidebar-btn"></i>
+    <i
+      class="fa-solid fa-bars toggle-sidebar-btn"
+      (click)="toggleSidebar()"
+    ></i>
   </div>
   <!-- End Logo div -->
 
@@ -66,23 +69,42 @@
   <!-- End nav Bar -->
 
   <!--Start Side bar-->
-  <aside id="sidebar" class="sidebar">
+  <aside
+    id="sidebar"
+    class="sidebar"
+    [ngClass]="{ 'sidebar-open': isCollapsed }"
+    *ngIf="!isCollapsed"
+  >
     <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item" *ngIf="connectedUser?.fonction === 'Directeur'">
+        <a
+          class="nav-link"
+          routerLink="/home"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
+          <i class="fa-duotone fa-solid fa-house me-2"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
       <li class="nav-item" *ngFor="let menuItem of menuItems">
-        <a class="nav-link" routerLink="{{ menuItem.route }}">
+        <a
+          class="nav-link"
+          routerLink="{{ menuItem.route }}"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+        >
           <i class="{{ menuItem.icon }} me-2"></i>
-          <span *ngIf="!isCollapsed">{{ menuItem.title }}</span>
+          <span>{{ menuItem.title }}</span>
         </a>
       </li>
     </ul>
   </aside>
   <!--End Side bar-->
 </header>
-<!-- <div class="content flex-grow-1">
-  <div class="p-3">
+
+<!-- <main class="container mt-5">
+  <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 screenContainer">
     <router-outlet></router-outlet>
   </div>
-</div> -->
-<div class="content">
-  <router-outlet></router-outlet>
-</div>
+</main> -->
