@@ -11,7 +11,10 @@ export class SigninComponent {
   email = '';
   password = '';
   error = '';
-  constructor(private authService: AuthService, private router: Router) { }
+
+  constructor(private authService: AuthService, private router: Router) {
+    console.log("hello")
+  }
 
   signIn(): void {
     if (!this.email || !this.password) {

@@ -1,1 +1,88 @@
-<p>side-bar works!</p>
+<header
+  id="header"
+  class="menu_theme header fixed-top d-flex align-items-center"
+  *ngIf="connectedUser"
+>
+  <!-- Start Logo div -->
+  <div class="d-flex align-items-center justify-content-between">
+    <a routerLink="/home" class="logo d-flex align-items-center">
+      <span class="d-none d-lg-block">Ensitech</span>
+    </a>
+    <i class="fa-solid fa-bars toggle-sidebar-btn"></i>
+  </div>
+  <!-- End Logo div -->
+
+  <!-- Start nav Bar -->
+  <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
+      <li class="nav-item dropdown pe-3">
+        <a
+          class="nav-link nav-profile d-flex align-items-center pe-0"
+          href="#"
+          data-bs-toggle="dropdown"
+        >
+          <img
+            src="assets/images/avatar.jpg"
+            alt="Profile"
+            class="rounded-circle"
+          />
+          <span class="d-none d-md-block dropdown-toggle ps-2"
+            >{{ connectedUser.prenom[0] }}.{{ connectedUser.nom }}</span
+          > </a
+        ><!-- End Profile Iamge Icon -->
+        <!-- Start Profile -->
+        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+          <li class="dropdown-header">
+            <h6>{{ connectedUser.prenom }} {{ connectedUser.nom }}</h6>
+            <span>{{ connectedUser.fonction }}</span>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+          <li>
+            <a class="dropdown-item d-flex align-items-center" href="#">
+              <i class="fa-solid fa-user"></i>
+              <span>Mon Profil</span>
+            </a>
+          </li>
+          <li>
+            <hr class="dropdown-divider" />
+          </li>
+
+          <li id="signoutButton">
+            <a
+              class="dropdown-item d-flex align-items-center"
+              (click)="signOut()"
+            >
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <span>Déconnexion</span>
+            </a>
+          </li>
+        </ul>
+        <!-- End Profile -->
+      </li>
+    </ul>
+  </nav>
+  <!-- End nav Bar -->
+
+  <!--Start Side bar-->
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item" *ngFor="let menuItem of menuItems">
+        <a class="nav-link" routerLink="{{ menuItem.route }}">
+          <i class="{{ menuItem.icon }} me-2"></i>
+          <span *ngIf="!isCollapsed">{{ menuItem.title }}</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <!--End Side bar-->
+</header>
+<!-- <div class="content flex-grow-1">
+  <div class="p-3">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

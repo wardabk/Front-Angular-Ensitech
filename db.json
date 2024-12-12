@@ -9,8 +9,7 @@
         "adresse": "15 avn tn",
         "password": "12345678",
         "telephone": "11223344",
-        "dateNaissance": "01/01/1980",
-        "authToken": "token1"
+        "dateNaissance": "01/01/1980"
       },
       {
         "id": 2,
@@ -21,8 +20,7 @@
         "adresse": "18 abn sn",
         "password": "12345678",
         "telephone": "55667788",
-        "dateNaissance": "18/03/1985",
-        "authToken": "token2"
+        "dateNaissance": "18/03/1985"
       }
     ]
   }
