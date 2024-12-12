@@ -1,6 +1,149 @@
 <app-side-bar></app-side-bar>
 <main class="container mt-5">
   <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 screenContainer">
-    <p>Cours works!</p>
+    <div class="text-center titleBox">
+      <h1 class="font-weight-bold text-primary">Liste des Cours</h1>
+    </div>
+
+    <!--Tableau-->
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6 mx-auto">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control"
+          placeholder="Rechercher un cours..."
+          [(ngModel)]="searchInput"
+          (input)="onSearch()"
+        />
+      </div>
+      <div
+        *ngIf="filteredCours.length === 0 && searchInput !== ''"
+        class="alert alert-danger"
+      >
+        Aucun résultat
+      </div>
+    </div>
+    <section class="p-3">
+      <div class="row">
+        <div class="col-12s p-2 d-flex justify-content-end">
+          <button
+            class="btn btn-primary newUser"
+            data-bs-toggle="modal"
+            data-bs-target="#coursFormContainer"
+          >
+            Créer un Cours
+            <!-- <i class="bi bi-people"></i> -->
+          </button>
+        </div>
+      </div>
+      <!--Tableau-->
+      <div class="row">
+        <div class="table-responsive">
+          <table
+            class="table table-striped table-hover mt-3 text-center table-bordered"
+            id="coursTable"
+          >
+            <thead>
+              <tr>
+                <th>Identifiant</th>
+                <th>Thème</th>
+                <th>Nombre d'heure</th>
+                <!-- <th>Enseignant</th> -->
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let cours of filteredCours">
+                <td>{{ cours.id }}</td>
+                <td>{{ cours.theme }}</td>
+                <td>{{ cours.nbreHeure }}</td>
+                <td>
+                  <button
+                    class="btn btn-primary btn-sm me-1"
+                    (click)="onEditCours(cours)"
+                  >
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="onDeleteCours(cours.id)"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!--Formulaire Creation-->
+    <div class="modal fade" id="coursFormContainer">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-title"></h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="coursForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="theme">Thème</label>
+                  <input
+                    type="text"
+                    class="form-control w-100"
+                    id="theme"
+                    placeholder="Thème"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-2">
+                  <label for="nbreHeure">Nombre d'heure</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="nbreHeure"
+                    placeholder="Nombre d'heure"
+                    required
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-success submit"
+              id="saveButton"
+              style="display: none"
+            >
+              Ajouter
+            </button>
+            <button
+              class="btn btn-warning submit"
+              id="editButton"
+              style="display: none"
+            >
+              Modifier
+            </button>
+            <button
+              class="btn btn-danger submit"
+              id="deleteButton"
+              style="display: none"
+            >
+              Supprimer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
