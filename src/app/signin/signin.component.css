@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+
+
+.loginScreen {
+    background-color: #89a1e8 !important;
+    font-family: "Merriweather", sans-serif;
+}
+
+.card {
+    overflow: hidden;
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rbga(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.logoEnsitech {
+    width: 120px;
+}
+
+.title {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 900;
+    color: rgb(87, 83, 83);
+}
+
+
+/**********************************/
+.footer {
+    background-color: #89a1e8;
+    position: relative;
+    padding-bottom: 2rem;
+    width: 100%;
+    font-family: "Merriweather", sans-serif;
+}
+
+.footer .pied {
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+
+.footer .copyright,
+.footer .credits {
+    font-size: 14px;
+
+}
+
+.footer .copyright {
+    font-weight: 600;
+
+}
+
+.footer .credits {
+    font-weight: 900;
+    color: #333333;
+}
+
+.footer span {
+    color: #333333;
+    font-weight: 900;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #333333;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
