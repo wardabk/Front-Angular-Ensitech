@@ -1,6 +1,56 @@
-<app-side-bar></app-side-bar>
-<main class="container mt-5">
+<!-- dashboard.component.html -->
+<main class="container dashboard mt-5">
   <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 screenContainer">
-    <p>home works!</p>
+    <div class="row d-flex justify-content-center mx-auto">
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let card of cards">
+        <div class="card d-flex flex-row align-items-center">
+          <div class="card-body flex-grow-1">
+            <h2 class="card-title">{{ card.title }}</h2>
+            <h4 class="card-text">{{ card.title }}</h4>
+          </div>
+          <span class="icon me-3">
+            <i [class]="card.icon"></i>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- chart presence étudiant -->
+    <div class="row d-flex justify-content-center mx-auto">
+      <div class="col-sm-12 col-md-6 pt-3">
+        <h3 class="title text-center">Moyenne générale des classes</h3>
+        <p class="sous-title text-center">1er année</p>
+        <div class="chart-container">
+          <canvas id="chartPresence"></canvas>
+        </div>
+      </div>
+
+      <!-- chart spécialités -->
+      <div class="col-sm-12 col-md-6 pt-3">
+        <h3 class="title text-center">Répartition étudiants par spécialité</h3>
+        <div class="chart-container">
+          <canvas id="chartBranch"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- chart notes -->
+    <div class="row d-flex justify-content-center mx-auto">
+      <div class="col-sm-12 col-md-6">
+        <h3 class="title text-center">Notes de classe 2ème MDW</h3>
+        <p class="sous-title text-center">Groupe1</p>
+        <div class="chart-container">
+          <canvas id="gradesChart1"></canvas>
+        </div>
+      </div>
+
+      <div class="col-sm-12 col-md-6">
+        <h3 class="title text-center">Notes de Myriam Salhi</h3>
+        <p class="sous-title text-center">2ème MDW (groupe1)</p>
+        <div class="chart-container">
+          <canvas id="gradesChart2"></canvas>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
