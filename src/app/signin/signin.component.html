@@ -1,0 +1,87 @@
+<div class="d-flex flex-column min-vh-100">
+  <section class="loginScreen flex-grow-1 d-flex align-items-center">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card">
+            <div class="row g-0">
+              <div class="col d-none d-md-flex">
+                <img
+                  src="assets/images/left-photo.jpg"
+                  alt="login form"
+                  class="img-fluid leftPhoto"
+                />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <img
+                      src="assets/images/logo2.png"
+                      class="logoEnsitech"
+                      alt="logoEnsitech"
+                    />
+                  </div>
+                  <h3 class="title">Se connecter</h3>
+                  <form id="myForm" class="form-box px-3">
+                    <div class="input-group mb-3">
+                      <span class="input-group-text"
+                        ><i class="fa-solid fa-envelope"></i
+                      ></span>
+                      <input
+                        type="email"
+                        name="email"
+                        id="mail"
+                        placeholder="Adresse Email"
+                        tabindex="10"
+                        class="form-control"
+                        [(ngModel)]="email"
+                        required
+                      />
+                    </div>
+
+                    <div class="input-group mb-3">
+                      <span class="input-group-text"
+                        ><i class="fa-solid fa-key"></i
+                      ></span>
+                      <input
+                        type="password"
+                        name="password"
+                        id="mdp"
+                        placeholder="Mot de passe"
+                        tabindex="10"
+                        class="form-control"
+                        aria-label="Password"
+                        [(ngModel)]="password"
+                        required
+                      />
+                    </div>
+                    <div *ngIf="error" style="color: red">{{ error }}</div>
+                    <div class="d-grid mb-1">
+                      <button
+                        class="btn btn-primary btn-block"
+                        type="submit"
+                        id="signinButton"
+                        (click)="signIn()"
+                      >
+                        Se connecter
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="footer container-fluid text-center">
+    <div class="pied">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Promo 2024</span></strong> Formation
+        Concepteur Developpeur Fullstack
+      </div>
+      <div class="credits">Soutenance <a href="#">Groupe 4</a></div>
+    </div>
+  </footer>
+</div>
