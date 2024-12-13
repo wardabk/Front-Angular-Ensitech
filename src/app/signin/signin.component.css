@@ -3,7 +3,7 @@
 
 
 .loginScreen {
-    background-color: #89a1e8 !important;
+    /* background-color: #89a1e8 !important; */
     font-family: "Merriweather", sans-serif;
 }
 
@@ -32,7 +32,7 @@
 
 /**********************************/
 .footer {
-    background-color: #89a1e8;
+    /* background-color: #89a1e8; */
     position: relative;
     padding-bottom: 2rem;
     width: 100%;
