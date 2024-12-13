@@ -29,4 +29,7 @@ export class CoursService {
       })
     );
   }
+  addCours(cours: Cours): Observable<Cours> {
+    return this.http.post<Cours>(this.apiUrl, cours);
+  }
 }

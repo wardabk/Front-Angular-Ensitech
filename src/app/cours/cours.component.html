@@ -17,11 +17,11 @@
           (input)="onSearch()"
         />
       </div>
-      <div
-        *ngIf="filteredCours.length === 0 && searchInput !== ''"
-        class="alert alert-danger"
-      >
-        Aucun résultat
+      <div *ngIf="errorMsg !== ''" class="alert alert-danger">
+        {{ errorMsg }}
+      </div>
+      <div *ngIf="successMsg !== ''" class="alert alert-success">
+        {{ successMsg }}
       </div>
     </div>
     <section class="p-3">
@@ -55,20 +55,20 @@
             </thead>
 
             <tbody>
-              <tr *ngFor="let cours of filteredCours">
+              <tr *ngFor="let cours of filteredCours; let i = index">
                 <td>{{ cours.id }}</td>
                 <td>{{ cours.theme }}</td>
                 <td>{{ cours.nbreHeure }}</td>
                 <td>
                   <button
                     class="btn btn-primary btn-sm me-1"
-                    (click)="onEditCours(cours)"
+                    (click)="onEdit(cours)"
                   >
                     <i class="fas fa-edit"></i>
                   </button>
                   <button
                     class="btn btn-danger btn-sm"
-                    (click)="onDeleteCours(cours.id)"
+                    (click)="onDelete(cours.id)"
                   >
                     <i class="fas fa-trash"></i>
                   </button>
@@ -104,6 +104,8 @@
                     id="theme"
                     placeholder="Thème"
                     required
+                    [(ngModel)]="cours.theme"
+                    name="theme"
                   />
                 </div>
                 <div class="form-group mt-2">
@@ -114,16 +116,21 @@
                     id="nbreHeure"
                     placeholder="Nombre d'heure"
                     required
+                    [(ngModel)]="cours.nbreHeure"
+                    name="nbreHeure"
                   />
                 </div>
               </div>
             </form>
           </div>
+          <p>{{ errorMsg }}</p>
           <div class="modal-footer">
             <button
               class="btn btn-success submit"
               id="saveButton"
               style="display: none"
+              type="submit"
+              (click)="onSave()"
             >
               Ajouter
             </button>

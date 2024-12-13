@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "prenom": "Warda",
+      "nom": "Boubaker",
+      "fonction": "Responsable des études",
+      "email": "warda@gmail.com",
+      "adresse": "15 avn tn",
+      "password": "12345678",
+      "telephone": "11223344",
+      "dateNaissance": "01/01/1980"
+    },
+    {
+      "id": "2",
+      "prenom": "Djimo",
+      "nom": "Gassama",
+      "fonction": "Directeur",
+      "email": "djimo@gmail.com",
+      "adresse": "18 abn sn",
+      "password": "12345678",
+      "telephone": "55667788",
+      "dateNaissance": "18/03/1985"
+    }
+  ],
+  "etudiant": [
+    {
+      "id": "1",
+      "prenom": "Aicha",
+      "nom": "Bendjir",
+      "email": "aicha@gmail.com",
+      "adresse": "15 avn tn",
+      "telephone": "66445500",
+      "dateNaissance": "01/01/1980"
+    },
+    {
+      "id": "2",
+      "prenom": "Jean Batiste",
+      "nom": "Goumou",
+      "email": "jean@gmail.com",
+      "adresse": "15 avn tn",
+      "telephone": "66445501",
+      "dateNaissance": "01/01/1980"
+    }
+  ],
+  "enseignant": [
+    {
+      "id": "1",
+      "prenom": "Oumou",
+      "nom": "Sow",
+      "email": "oumou@gmail.com",
+      "adresse": "15 avn tn",
+      "telephone": "88445500",
+      "dateNaissance": "01/01/1980"
+    },
+    {
+      "id": "2",
+      "prenom": "Cheikh Oumar",
+      "nom": "Diakité",
+      "email": "cheikh@gmail.com",
+      "adresse": "15 avn tn",
+      "telephone": "88445501",
+      "dateNaissance": "01/01/1980"
+    }
+  ],
+  "cours": [
+    {
+      "id": "1",
+      "theme": "Réseau",
+      "nbreHeure": 8
+    },
+    {
+      "id": "2",
+      "theme": "Conception",
+      "nbreHeure": 16
+    },
+    {
+      "id": "3",
+      "theme": "Algorithmique",
+      "nbreHeure": 4
+    }
+  ],
+  "note": [
+    {
+      "id": "1",
+      "idEtudiant": 1,
+      "idCours": 2,
+      "idEnseignant": 1,
+      "valeur": 15
+    },
+    {
+      "id": "2",
+      "idEtudiant": 2,
+      "idCours": 3,
+      "idEnseignant": 2,
+      "valeur": 12
+    },
+    {
+      "id": "3",
+      "idEtudiant": 2,
+      "idCours": 1,
+      "idEnseignant": 2,
+      "valeur": 8
+    }
+  ]
+}
