@@ -102,6 +102,7 @@ export class CoursComponent implements OnInit, AfterViewInit {
           } else {
             console.error('Modal element not found');
           }
+          this.onfetchData()
           this.handleAlert("success", 'Cours enregistré avec succès');
 
         },
