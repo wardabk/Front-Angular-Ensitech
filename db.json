@@ -1,0 +1,39 @@
+{
+  "student": [
+    {
+      "id": 1,
+      "firstName": "Djimo",
+      "lastName": "Gassama",
+      "address": "APIX CITY",
+      "tel": 779818854
+    },
+    {
+      "id": 2,
+      "firstName": "Papa",
+      "lastName": "Santo",
+      "address": "Tivaouane Peulh",
+      "tel": 773818776
+    },
+    {
+      "id": 3,
+      "firstName": "Mamadou",
+      "lastName": "Sylla",
+      "address": "Keur Massar",
+      "tel": 771650934
+    },
+    {
+      "id": 0,
+      "firstName": "Papa",
+      "lastName": "Gassama",
+      "tel": "773818776",
+      "address": "Dakar, Keur Massar"
+    },
+    {
+      "id": 0,
+      "firstName": "",
+      "lastName": "",
+      "tel": 0,
+      "address": ""
+    }
+  ]
+}
