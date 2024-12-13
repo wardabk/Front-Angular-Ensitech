@@ -225,7 +225,6 @@
     },
     {
       "id": "4",
-      
       "theme": "Docker",
       "nbreHeure": 12
     },
@@ -233,29 +232,23 @@
       "id": "5",
       "theme": "Bootstrap",
       "nbreHeure": 16
-      
-      "theme": "fkl",
-      "nbreHeure": 85
     },
     {
-      "id": "5",
-      "theme": "lmù",
-      "nbreHeure": 878
-    },
-    {
-      "id": 6,
+      "id": "6",
       "theme": "electronique",
       "nbreHeure": 10
-
     }
   ],
   "note": [
     {
       "id": "1",
       "idEtudiant": "1",
-      "idCours": "2",
+      "idCours": "3",
       "idEnseignant": "1",
-      "valeur": 15
+      "valeur": 15,
+      "nomEtudiant": "Aicha Bendjir",
+      "nomEnseignant": "Oumou Sow",
+      "themeCours": "Conception"
     },
     {
       "id": "2",
@@ -296,16 +289,6 @@
       "idEnseignant": "6",
       "nomEnseignant": "",
       "valeur": 15
-    },
-    {
-      "id": "6",
-      "idEtudiant": "10",
-      "nomEtudiant": "",
-      "idCours": "2",
-      "themeCours": "",
-      "idEnseignant": "5",
-      "nomEnseignant": "",
-      "valeur": 16
     }
   ]
 }
