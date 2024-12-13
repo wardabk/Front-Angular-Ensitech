@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { Modal } from 'bootstrap';
 import { Cours } from './cours.interface';
 import { CoursService } from './cours.service';
@@ -15,10 +15,13 @@ export class CoursComponent implements OnInit, AfterViewInit {
   successMsg: string = '';
   errorMsg: string = '';
   cours: Cours = {
-    id: 0,
+    id: "",
     theme: "",
     nbreHeure: 0
   };
+
+  @ViewChild('coursFormContainer', { static: true }) modalElement!: ElementRef;
+  modalInstance!: Modal
   constructor(private coursService: CoursService) { }
   isCoursInitialized(): boolean {
     return this.cours.theme === '' || this.cours.nbreHeure === 0;
@@ -43,20 +46,21 @@ export class CoursComponent implements OnInit, AfterViewInit {
     });
   }
   ngOnInit(): void {
+    this.modalInstance = new Modal(this.modalElement.nativeElement);
     this.onfetchData()
   }
   ngAfterViewInit() {
-    const modalElement = document.getElementById('coursFormContainer');
+    // const modalElement = document.getElementById('coursFormContainer');
     const modalTitle = document.getElementById('modal-title');
     const formElement = document.getElementById('coursForm') as HTMLFormElement;
     const saveButton = document.getElementById('saveButton');
     const editButton = document.getElementById('editButton');
 
 
-    if (modalElement && modalTitle && formElement && saveButton && editButton) {
+    if (this.modalElement && modalTitle && formElement && saveButton && editButton) {
       saveButton.style.display = 'none';
       editButton.style.display = 'none';
-      modalElement.addEventListener('shown.bs.modal', () => {
+      this.modalElement.nativeElement.addEventListener('shown.bs.modal', () => {
         if (this.isCoursInitialized()) {
           modalTitle.innerHTML = 'Nouveau Cours';
           saveButton.style.display = 'block';
@@ -66,11 +70,11 @@ export class CoursComponent implements OnInit, AfterViewInit {
         }
       });
 
-      modalElement.addEventListener('hidden.bs.modal', () => {
+      this.modalElement.nativeElement.addEventListener('hidden.bs.modal', () => {
         modalTitle.innerHTML = '';
         formElement.reset();
         this.cours = {
-          id: 0,
+          id: "",
           theme: "",
           nbreHeure: 0
         }
@@ -79,21 +83,27 @@ export class CoursComponent implements OnInit, AfterViewInit {
       });
     }
   }
+  openModal(cours: Cours): void {
+    // const modalElement = document.getElementById('coursFormContainer');
+    if (this.modalElement) {
+      this.cours = { ...cours }
+      // const modal = new Modal(modalElement);
+      this.modalInstance.show();
+    }
+  }
   onSave(): void {
-    console.log("onSave")
-    console.log('Course Data:', this.cours);
-    const modalElement = document.getElementById('coursFormContainer');
+
     if (!this.isCoursInitialized()) {
-      const lastId = Math.max(...this.listCours.map(i => i.id));
-      const newCours = { ...this.cours, ...{ id: lastId + 1 } }
+      const lastId = Math.max(...this.listCours.map(i => Number(i.id)));
+      const newCours = { ...this.cours, ...{ id: `${lastId + 1}` } }
+      // const newCours = { ...this.cours, ...{ id: lastId + 1 } }
       this.coursService.addCours(newCours).subscribe({
         next: (resp) => {
           console.log('Cours saved:', resp);
-          if (modalElement) {
-            modalElement.classList.remove('show');
-            modalElement.setAttribute('aria-hidden', 'true');
-            modalElement.style.display = 'none';
 
+          if (this.modalElement) {
+
+            this.modalInstance.hide();
             const backdrop = document.querySelector('.modal-backdrop');
             if (backdrop) {
               backdrop.remove();
@@ -114,14 +124,40 @@ export class CoursComponent implements OnInit, AfterViewInit {
 
 
   }
-  onEdit(cours: Cours): void {
-    console.log("editCours", cours)
+  onEdit(): void {
+    // const modalElement = document.getElementById('coursFormContainer');
+    if (!this.isCoursInitialized()) {
+      this.coursService.editCours(this.cours).subscribe({
+        next: (resp) => {
+          console.log('Cours edit:', resp);
+          if (this.modalElement) {
+
+            this.modalInstance.hide();
+            const backdrop = document.querySelector('.modal-backdrop');
+            if (backdrop) {
+              backdrop.remove();
+            }
+            console.log('Modal hide called');
+          } else {
+            console.error('Modal element not found');
+          }
+          this.onfetchData()
+          this.handleAlert("success", 'Cours modifié avec succès');
+
+        },
+        error: (err) => console.error('Error editing cours:', err)
+      });
+    } else {
+      this.handleAlert("error", 'Veuillez remplir tous les champs');
+    }
+
   }
-  onDelete(id: number): void {
+  onDelete(id: string): void {
     this.coursService.deleteCours(id).subscribe((isDeleted) => {
       if (isDeleted) {
         // this.listCours = this.listCours.filter(cours => cours.id !== id);
         this.onfetchData()
+        this.handleAlert("success", 'Cours supprimé avec succès');
 
       } else {
         console.error(`Failed to delete course with id ${id}`);
