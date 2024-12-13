@@ -9,14 +9,14 @@ import { Cours } from './cours.interface';
   providedIn: 'root',
 })
 export class CoursService {
-  private apiUrl = 'http://localhost:3000/cours'; 
+  private apiUrl = 'http://localhost:3000/cours';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getAllCours(): Observable<Cours[]> {
     return this.http.get<Cours[]>(this.apiUrl);
   }
-  deleteCours(id: number): Observable<boolean> {
+  deleteCours(id: string): Observable<boolean> {
     const apiUrl = `http://localhost:3000/cours/${id}`;
     return this.http.delete(apiUrl).pipe(
       map(() => {
@@ -31,5 +31,9 @@ export class CoursService {
   }
   addCours(cours: Cours): Observable<Cours> {
     return this.http.post<Cours>(this.apiUrl, cours);
+  }
+  editCours(cours: Cours): Observable<Cours> {
+    // const id = Number(cours.id);
+    return this.http.put<Cours>(`${this.apiUrl}/${cours.id}`, cours);
   }
 }

@@ -1,5 +1,5 @@
 export interface Cours {
-    id: number;
+    id: string;
     theme: string;
     nbreHeure: number;
 }

@@ -1,6 +1,192 @@
 <app-side-bar></app-side-bar>
 <main class="container mt-5">
   <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 screenContainer">
-    <p>note works!</p>
+    <div class="text-center titleBox">
+      <h1 class="font-weight-bold text-primary">Liste des Notes</h1>
+    </div>
+
+    <!--Tableau-->
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6 mx-auto">
+        <input
+          type="text"
+          id="searchInput"
+          class="form-control"
+          placeholder="Rechercher une note..."
+          [(ngModel)]="searchInput"
+          (input)="onSearch()"
+        />
+      </div>
+      <div *ngIf="errorMsg !== ''" class="alert alert-danger">
+        {{ errorMsg }}
+      </div>
+      <div *ngIf="successMsg !== ''" class="alert alert-success">
+        {{ successMsg }}
+      </div>
+    </div>
+    <section class="p-3">
+      <div class="row">
+        <div class="col-12s p-2 d-flex justify-content-end">
+          <button
+            class="btn btn-primary newUser"
+            data-bs-toggle="modal"
+            data-bs-target="#noteFormContainer"
+          >
+            Créer une Note
+          </button>
+        </div>
+      </div>
+      <!--Tableau-->
+      <div class="row">
+        <div class="table-responsive datatable" data-mdb-datatable-init>
+          <table
+            class="table table-striped table-hover mt-3 text-center table-bordered"
+            id="noteTable"
+          >
+            <thead>
+              <tr>
+                <th>Identifiant</th>
+                <th>Cours</th>
+                <th>Enseignant</th>
+                <th>Etudiant</th>
+                <th>Note</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let note of filteredNote">
+                <td>{{ note.id }}</td>
+                <td>{{ note.themeCours }}</td>
+                <td>{{ note.nomEnseignant }}</td>
+                <td>{{ note.nomEtudiant }}</td>
+                <td>{{ note.valeur }}</td>
+                <td>
+                  <button
+                    class="btn btn-primary btn-sm me-1"
+                    (click)="openModal(note)"
+                  >
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button
+                    class="btn btn-danger btn-sm"
+                    (click)="onDelete(note.id)"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!--Formulaire Creation-->
+    <div class="modal fade" id="noteFormContainer" #noteFormContainer>
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-title"></h4>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+
+          <div class="modal-body">
+            <form id="noteForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="cours">Cours</label>
+                  <select
+                    [(ngModel)]="note.idCours"
+                    name="coursSelector"
+                    id="coursSelector"
+                    class="form-control"
+                  >
+                    <option *ngFor="let cours of listCours" [value]="cours.id">
+                      {{ cours.theme }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="enseignant">Enseignant</label>
+                  <select
+                    [(ngModel)]="note.idEnseignant"
+                    name="enseignantSelector"
+                    id="enseignantSelector"
+                    class="form-control"
+                  >
+                    <option
+                      *ngFor="let enseignant of listEnseignant"
+                      [value]="enseignant.id"
+                    >
+                      {{ enseignant.prenom }} {{ enseignant.nom }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="etudiant">Etudiant</label>
+                  <select
+                    [(ngModel)]="note.idEtudiant"
+                    name="etudiantSelector"
+                    id="etudiantSelector"
+                    class="form-control"
+                  >
+                    <option
+                      *ngFor="let etudiant of listEtudiant"
+                      [value]="etudiant.id"
+                    >
+                      {{ etudiant.prenom }} {{ etudiant.nom }}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group mt-2">
+                  <label for="valeur">Note</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="note"
+                    placeholder="Note"
+                    required
+                    [(ngModel)]="note.valeur"
+                    name="valeur"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <p>{{ errorMsg }}</p>
+          <div class="modal-footer">
+            <button
+              class="btn btn-success submit"
+              id="saveButton"
+              style="display: none"
+              type="submit"
+              (click)="onSave()"
+            >
+              Ajouter
+            </button>
+            <button
+              class="btn btn-warning submit"
+              id="editButton"
+              style="display: none"
+              (click)="onEdit()"
+            >
+              Modifier
+            </button>
+            <button
+              class="btn btn-danger submit"
+              id="deleteButton"
+              style="display: none"
+            >
+              Supprimer
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
