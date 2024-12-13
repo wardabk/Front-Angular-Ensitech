@@ -234,21 +234,23 @@
       "theme": "Bootstrap",
       "nbreHeure": 16
 
-          },
     {
       "id": 6,
+
       "theme": "electronique",
       "nbreHeure": 10
-
     }
   ],
   "note": [
     {
       "id": "1",
       "idEtudiant": "1",
-      "idCours": "2",
+      "idCours": "3",
       "idEnseignant": "1",
-      "valeur": 15
+      "valeur": 15,
+      "nomEtudiant": "Aicha Bendjir",
+      "nomEnseignant": "Oumou Sow",
+      "themeCours": "Conception"
     },
     {
       "id": "2",
@@ -289,16 +291,6 @@
       "idEnseignant": "6",
       "nomEnseignant": "",
       "valeur": 15
-    },
-    {
-      "id": "6",
-      "idEtudiant": "10",
-      "nomEtudiant": "",
-      "idCours": "2",
-      "themeCours": "",
-      "idEnseignant": "5",
-      "nomEnseignant": "",
-      "valeur": 16
     }
   ]
 }
