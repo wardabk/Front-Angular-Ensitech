@@ -225,6 +225,7 @@
     },
     {
       "id": "4",
+      
       "theme": "Docker",
       "nbreHeure": 12
     },
@@ -232,6 +233,20 @@
       "id": "5",
       "theme": "Bootstrap",
       "nbreHeure": 16
+      
+      "theme": "fkl",
+      "nbreHeure": 85
+    },
+    {
+      "id": "5",
+      "theme": "lmù",
+      "nbreHeure": 878
+    },
+    {
+      "id": 6,
+      "theme": "electronique",
+      "nbreHeure": 10
+
     }
   ],
   "note": [
