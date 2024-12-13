@@ -10,8 +10,6 @@ import { EnseignantComponent } from './enseignant/enseignant.component';
 import { CoursComponent } from './cours/cours.component';
 import { NoteComponent } from './note/note.component';
 import { HomeComponent } from './home/home.component';
-import { SigninComponent } from './signin/signin.component';
-import { SideBarComponent } from './side-bar/side-bar.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
@@ -21,16 +19,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     EnseignantComponent,
     CoursComponent,
     NoteComponent,
-    HomeComponent,
-    SigninComponent,
-    SideBarComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

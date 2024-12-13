@@ -1,0 +1,26 @@
+<div class="container">
+    <legend>Ajouter un étudiant</legend>
+    <form>
+        <!-- <div class="mb-3">
+            <label for="lastName" class="form-label">Id</label>
+            <input type="number" [(ngModel)]="formdata.id" name="id" class="form-control" id="id" [required]="true">
+        </div> -->
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Nom</label>
+            <input type="text" [(ngModel)]="formdata.lastName" name="lastName" class="form-control" id="lastName" [required]="true">
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Prénom</label>
+            <input type="text" [(ngModel)]="formdata.firstName" name="firstName" class="form-control" id="firstName" [required]="true">
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Téléphone</label>
+            <input type="tel" [(ngModel)]="formdata.tel" name="tel" class="form-control" id="tel" [required]="true">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Adresse</label>
+            <input type="text" [(ngModel)]="formdata.address" name="address" class="form-control" id="address" [required]="true">
+        </div>
+        <button type="button" (click)="create()" class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
