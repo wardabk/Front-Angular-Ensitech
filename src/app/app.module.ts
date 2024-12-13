@@ -10,7 +10,6 @@ import { NoteComponent } from './note/note.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreateStudentComponent } from './etudiant/create-student/create-student.component';
-import { DeleteStudentComponent } from './etudiant/delete-student/delete-student.component';
 import { EditStudentComponent } from './etudiant/edit-student/edit-student.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,7 +25,6 @@ import { RouterLink } from '@angular/router';
     NoteComponent,
     HomeComponent,
     CreateStudentComponent,
-    DeleteStudentComponent,
     EditStudentComponent,
   ],
   imports: [

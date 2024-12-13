@@ -21,11 +21,20 @@ export class StudentServiceService {
     return this.httpClient.post("http://localhost:3000/student", data)
   }
 
-  edit(id: number){
-    return this.httpClient.get<StudentServiceService>(`http://localhost:3000/student/${id}`)
-  }
-
   update(data: StudentInterface): Observable<StudentInterface> {
     return this.httpClient.put<StudentInterface>(`http://localhost:3000/student/${data.id}`, data);
+  }
+  
+
+  // update(data: StudentInterface): Observable<StudentInterface> {
+  //   return this.httpClient.put<StudentInterface>(`http://localhost:3000/student/${data.id}`, data);
+  // }
+
+  // delete(id: number){
+  //   return this.httpClient.delete<StudentServiceService>(`http://localhost:3000/student/${id}`)
+  // }
+
+  delete(id: number): Observable<void> {
+    return this.httpClient.delete<void>(`http://localhost:3000/student/${id}`);
   }
 }

@@ -17,7 +17,6 @@
             <label for="txtAddress" class="form-label">Adresse</label>
             <input type="text" name="address" class="form-control" id="txtAddress" [(ngModel)]="formdata.address">
         </div>
-        <button type="button" class="btn btn-primary">Modifier</button>
-        <h1>{{formdata.address}}</h1>
+        <td><a class="btn btn-primary" (click)="update()" routerLink="/student">Modifier</a></td>
     </form>
 </div>

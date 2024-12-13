@@ -1,39 +1,68 @@
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-primary bg-primary">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">Etudiants</a>
-        </div>
-        <div class="d-flex me-3">
-            <button class="btn btn-success" routerLink="student/create-student">Ajouter</button>
-        </div>
-    </nav>
+<!-- Titre -->
+
+<div class="d-flex justify-content-center">
+  <h1 class="font-weight-bold text-primary">Liste des Étudiants</h1>
 </div>
 
+<!-- La barre de recherche -->
+
+<input
+  class="form-control me-2"
+  type="search"
+  placeholder="Rechercher étudiant..."
+  aria-label="Search"
+  id="search"
+  [(ngModel)]="searchQuery"
+  (input)="filterStudents()"
+  style="width: 400px; height: 40px; margin-left: 248px"
+/>
+
 <div class="container">
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nom</th>
-                <th scope="col">Prénom</th>
-                <th scope="col">Tel</th>
-                <th scope="col">Adresse</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of allStudent">
-                <th scope="row">{{item.id}}</th>
-                <td scope="row">{{item.lastName}}</td>
-                <td scope="row">{{item.firstName}}</td>
-                <td scope="row">{{item.tel}}</td>
-                <td scope="row">{{item.address}}</td>
-                <td><a class="btn btn-primary" routerLink="edit-student/:{id}">Modifier</a></td>
-                <td><a class="btn btn-danger" routerLink="delete-student/:{id}">Supprimer</a></td>
-                <!-- <td><a class="btn btn-warning">Details</a></td> -->
-            </tr>
-        </tbody>
-    </table>
+  <table class="table">
+    <tbody>
+      <tr *ngFor="let item of filteredStudents"></tr>
+    </tbody>
+  </table>
 </div>
 
-<router-outlet></router-outlet>
+<!-- Button de création d'étudiant -->
+
+<div class="p-2 d-flex justify-content-end">
+  <button class="btn btn-primary" routerLink="/student/create">
+    Créer un étudiant
+  </button>
+</div>
+
+<!-- La liste des étudiants -->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Tel</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of filteredStudents">
+        <th scope="row">{{ item.id }}</th>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.tel }}</td>
+        <td>{{ item.address }}</td>
+        <td>
+          <a class="btn btn-primary" [routerLink]="['/student/edit', item.id]"
+            >Modifier</a
+          >
+        </td>
+        <td>
+          <a class="btn btn-danger" (click)="deleteItem(item.id)">Supprimer</a>
+        </td>
+        <td><a class="btn btn-warning">Détails</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

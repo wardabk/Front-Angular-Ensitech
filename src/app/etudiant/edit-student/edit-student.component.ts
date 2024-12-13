@@ -30,21 +30,39 @@ export class EditStudentComponent implements OnInit {
     });
   }
 
-  getById(id:number){
-    this.studentService.edit(id).subscribe((data) =>{
-      console.log(data)
-    });
-  }
+  // getById(id:number){
+  //   this.studentService.edit(id).subscribe((data) =>{
+  //     console.log(data)
+  //   });
+  // }
 
   update() {
-    this.studentService.edit(this.formdata.id).subscribe({
+    if (!this.formdata.firstName || !this.formdata.lastName) {
+      alert('Veuillez remplir tous les champs obligatoires.');
+      return;
+    }
+  
+    this.studentService.update(this.formdata).subscribe({
       next: () => {
-        // Handle success, for example, navigate to a different route
+        console.log('Mise à jour réussie');
         this.router.navigate(['/student']);
       },
       error: (err) => {
-        console.error(err); // Handle error
+        console.error('Erreur lors de la mise à jour', err);
       }
     });
   }
+  
+
+  // update() {
+  //   this.studentService.edit().subscribe({
+  //     next: () => {
+  //       // Handle success, for example, navigate to a different route
+  //       this.router.navigate(['/student']);
+  //     },
+  //     error: (err) => {
+  //       console.error(err); // Handle error
+  //     }
+  //   });
+  // }
 }

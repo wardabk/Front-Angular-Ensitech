@@ -11,23 +11,22 @@ import { StudentInterface } from 'src/app/student-interface';
 export class CreateStudentComponent {
   constructor(private studentService: StudentServiceService, private router: Router){}
 
-  formdata: StudentInterface = {
-    id: 0,
+  formdata: Omit<StudentInterface, 'id'> = {
     firstName: "",
     lastName: "",
     tel: 0,
     address: ""
-  }
+  };
 
-  create(){
+  create() {
     this.studentService.create(this.formdata).subscribe({
-      next:(data) =>{
+      next: (data) => {
         console.log('Student created successfully:', data);
-        this.router.navigate(["student"])
+        this.router.navigate(["student"]);
       },
-      error: (er) => {
-        console.log(er)
+      error: (err) => {
+        console.error(err);
       }
-    })
+    });
   }
 }
