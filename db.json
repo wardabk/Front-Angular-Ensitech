@@ -225,7 +225,6 @@
     },
     {
       "id": "4",
-
       "theme": "Docker",
       "nbreHeure": 12
     },
@@ -233,10 +232,9 @@
       "id": "5",
       "theme": "Bootstrap",
       "nbreHeure": 16
-
+    },
     {
-      "id": 6,
-
+      "id": "6",
       "theme": "electronique",
       "nbreHeure": 10
     }
