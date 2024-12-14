@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EnseignantService } from './enseignant.service';
 
+
 @Component({
   selector: 'app-enseignant',
   templateUrl: './enseignant.component.html',
   styleUrls: ['./enseignant.component.css']
 })
+
 export class EnseignantComponent implements OnInit {
   enseignants: any[] = [];
   filteredEnseignants: any[] = [];
@@ -116,6 +118,4 @@ export class EnseignantComponent implements OnInit {
   toggleForm(): void {
     this.showForm = !this.showForm;
   }
-
-
 }
