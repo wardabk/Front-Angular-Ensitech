@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EnseignantService } from './enseignant.service';
 
 @Component({
   selector: 'app-enseignant',
@@ -16,11 +17,11 @@ export class EnseignantComponent implements OnInit {
   showTable = true;
   selectedEnseignant: any = null; // Enseignant sélectionné pour modification ou suppression
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private enseignantService: EnseignantService) {}
 
   ngOnInit(): void {
     // Exemple de données d'enseignants, y compris Pierre
-    this.enseignants = [
+    /* this.enseignants = [
       {
         id: 1,
         prenom: 'Pierre',
@@ -32,7 +33,12 @@ export class EnseignantComponent implements OnInit {
       },
     ];
 
-    this.filteredEnseignants = [...this.enseignants];
+    this.filteredEnseignants = [...this.enseignants]; */
+    this.enseignantService.getAllEnseignant().subscribe((data) => {
+      // console.log("ss")
+      this.enseignants = data;
+      this.filteredEnseignants = data;
+    });
 
     // Initialisation du formulaire
     this.enseignantForm = this.fb.group({
