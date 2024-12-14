@@ -1,4 +1,3 @@
-
 {
   "users": [
     {
@@ -24,58 +23,6 @@
       "dateNaissance": "18/03/1985"
     }
   ],
-
-  " cours": [
-    {
-      "id": "1",
-      "theme": "Réseau",
-      "nbreHeure": 8
-    },
-    {
-      "id": "2",
-      "theme": "Conception",
-      "nbreHeure": 16
-    },
-    {
-      "id": "3",
-      "theme": "Algorithmique",
-      "nbreHeure": 4
-    },
-    {
-      "id": 4,
-      "theme": "fkl",
-      "nbreHeure": 85
-    },
-    {
-      "id": 5,
-      "theme": "lmù",
-      "nbreHeure": 878
-    }
-  ],
-   " note": [
-    {
-      "id": "1",
-      "idEtudiant": 1,
-      "idCours": 2,
-      "idEnseignant": 1,
-      "valeur": 15
-    },
-    {
-      "id": "2",
-      "idEtudiant": 2,
-      "idCours": 3,
-      "idEnseignant": 2,
-      "valeur": 12
-    },
-    {
-      "id": "3",
-      "idEtudiant": 2,
-      "idCours": 1,
-      "idEnseignant": 2,
-      "valeur": 8
-    }
-  ],
-
   "etudiant": [
     {
       "id": "1",
@@ -275,74 +222,29 @@
       "id": "3",
       "theme": "Algorithmique",
       "nbreHeure": 4
-    },
-    {
-      "id": "4",
-      "theme": "Docker",
-      "nbreHeure": 12
-    },
-    {
-      "id": "5",
-      "theme": "Bootstrap",
-      "nbreHeure": 16
-    },
-    {
-      "id": "6",
-      "theme": "electronique",
-      "nbreHeure": 10
     }
   ],
   "note": [
     {
       "id": "1",
-      "idEtudiant": "1",
-      "idCours": "3",
-      "idEnseignant": "1",
-      "valeur": 15,
-      "nomEtudiant": "Aicha Bendjir",
-      "nomEnseignant": "Oumou Sow",
-      "themeCours": "Conception"
+      "idEtudiant": 1,
+      "idCours": 2,
+      "idEnseignant": 1,
+      "valeur": 15
     },
     {
       "id": "2",
-      "idEtudiant": "2",
-      "idCours": "2",
-      "idEnseignant": "2",
-      "valeur": 15,
-      "nomEtudiant": "Jean Batiste Goumou",
-      "nomEnseignant": "Cheikh Oumar Diakité",
-      "themeCours": "Algorithmique"
+      "idEtudiant": 2,
+      "idCours": 3,
+      "idEnseignant": 2,
+      "valeur": 12
     },
     {
       "id": "3",
-      "idEtudiant": "1",
-      "idCours": "1",
-      "idEnseignant": "2",
-      "valeur": 19,
-      "nomEtudiant": "Aicha Bendjir",
-      "nomEnseignant": "Cheikh Oumar Diakité",
-      "themeCours": "Réseau"
-    },
-    {
-      "id": "4",
-      "idEtudiant": "8",
-      "nomEtudiant": "Marie Sy",
-      "idCours": "3",
-      "themeCours": "Algorithmique",
-      "idEnseignant": "9",
-      "nomEnseignant": "Seyni Thiam",
-      "valeur": 11
-    },
-    {
-      "id": "5",
-      "idEtudiant": "5",
-      "nomEtudiant": "",
-      "idCours": "5",
-      "themeCours": "",
-      "idEnseignant": "6",
-      "nomEnseignant": "",
-      "valeur": 15
+      "idEtudiant": 2,
+      "idCours": 1,
+      "idEnseignant": 2,
+      "valeur": 8
     }
   ]
-
 }
