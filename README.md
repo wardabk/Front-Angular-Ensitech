@@ -13,13 +13,14 @@ Application web conçue pour centraliser et optimiser la gestion  d'une école d
  - Docker
 
 ## Contributeurs
- - Djimo Gassama
+ - Jean Batiste Goumou
  - Warda Boubaker
  - Oumou Sow
+ - Djimo Gassama
 
 ## Build Docker Image
- - docker build -t glowriousmous/ensitech-10kc-groupe4 .
+ - docker build -t glowriousmou/ensitech-10kc-groupe4 .
 ## Push  Docker Image
- - docker push  glowriousmous/ensitech-10kc-groupe4
+ - docker push  glowriousmou/ensitech-10kc-groupe4
 ## Run  Docker Image
- - docker run -p 4200:4200 -p 3000:3000   glowriousmous/ensitech-10kc-groupe4
+ - docker run -p 4200:4200 -p 3000:3000   glowriousmou/ensitech-10kc-groupe4

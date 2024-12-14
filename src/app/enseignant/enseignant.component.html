@@ -5,189 +5,234 @@
       <h1 class="font-weight-bold text-primary">Liste des Enseignants</h1>
     </div>
 
- <!-------------barre de recherche d'enseignant--------->
- <div class="row">
-  <div class="col-12 col-md-8 col-lg-6 mx-auto">
-    <input
-      type="text"
-      id="searchInput"
-      class="form-control"
-      placeholder="Rechercher un enseignant..."
-      (input)="filterEnseignants($event)"
-    />
-  </div>
-</div>
-
-
-<!-------------------------------button ajout ens-->
-<div class="row">
-  <div class="col-12s p-2 d-flex justify-content-end">
-    <button
-    *ngIf="!showForm" class="btn btn-primary" (click)="toggleForm()"> Ajouter un enseignant
-  </button>
-  </div>
-</div>
-<!---------------formulaire pour ajouter un enseignant---------->
-<div *ngIf="showForm" class="card p-3 mt-3">
-  <form [formGroup]="enseignantForm" (ngSubmit)="onSubmit()">
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="nom" class="form-label">Nom</label>
+    <!-------------barre de recherche d'enseignant--------->
+    <div class="row">
+      <div class="col-12 col-md-8 col-lg-6 mx-auto">
         <input
           type="text"
+          id="searchInput"
           class="form-control"
-          id="nom"
-          formControlName="nom"
-          placeholder="Nom"
-        />
-      </div>
-      <div class="col-md-6">
-        <label for="prenom" class="form-label">Prénom</label>
-        <input
-          type="text"
-          class="form-control"
-          id="prenom"
-          formControlName="prenom"
-          placeholder="Prénom"
+          placeholder="Rechercher un enseignant..."
+          (input)="filterEnseignants($event)"
         />
       </div>
     </div>
 
-    <div class="mb-3">
-      <label for="telephone" class="form-label">Téléphone</label>
-      <input
-        type="text"
-        class="form-control"
-        id="telephone"
-        formControlName="telephone"
-        placeholder="Numéro de Téléphone"
-      />
+    <!-------------------------------button ajout ens-->
+    <div class="row">
+      <div class="col-12s p-2 d-flex justify-content-end">
+        <button
+          *ngIf="!showForm"
+          class="btn btn-primary"
+          (click)="toggleForm()"
+        >
+          Ajouter un enseignant
+        </button>
+      </div>
     </div>
-
-    <div class="mb-3">
-      <label for="email" class="form-label">Adresse Email</label>
-      <input
-        type="email"
-        class="form-control"
-        id="email"
-        formControlName="email"
-        placeholder="Email"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label for="adresse" class="form-label">Adresse</label>
-      <input
-        type="text"
-        class="form-control"
-        id="adresse"
-        formControlName="adresse"
-        placeholder="Adresse"
-      />
-    </div>
-
-    <div class="mb-3">
-      <label for="date_naissance" class="form-label">Date de Naissance</label>
-      <input
-        type="date"
-        class="form-control"
-        id="date_naissance"
-        formControlName="dateNaissance"
-      />
-    </div>
-
-    <!-- Boutons du formulaire -->
-    <div class="d-flex justify-content-end">
-      <button
-        type="submit"
-        class="btn btn-primary">
-        Ajouter
-      </button>
-    </div>
-  </form>
-</div>
-<!-------------table des informations des enseignants--------->
-<section class="p-3">
-  <div class="row">
-    <div class="table-responsive">
-      <table
-        class="table table-striped table-hover mt-3 text-center table-bordered"
-        id="enseignantTable"
-      >
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Prénom</th>
-            <th>Nom</th>
-            <th>Email</th>
-            <th>Adresse</th>
-            <th>Téléphone</th>
-            <th>Date de Naissance</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <tr *ngFor="let enseignant of filteredEnseignants">
-            <td>{{ enseignant.id }}</td>
-            <td>{{ enseignant.prenom }}</td>
-            <td>{{ enseignant.nom }}</td>
-            <td>{{ enseignant.email }}</td>
-            <td>{{ enseignant.adresse }}</td>
-            <td>{{ enseignant.telephone }}</td>
-            <td>{{ enseignant.dateNaissance }}</td>
-            <td>
-              <button class="btn btn-primary btn-sm me-2" (click)="viewEnseignant(enseignant)">Voir</button>
-              <button class="btn btn-warning btn-sm" (click)="associateEnseignant(enseignant)">Associer
-              </button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-<!-----------------------------------------formulaire info--------------------------------->
-
-
-<!-- Formulaire pour modifier ou supprimer un enseignant -->
-<section *ngIf="selectedEnseignant" class="p-3">
-  <div class="row">
-    <div class="col-12">
-      <h3>Informations de l'Enseignant</h3>
+    <!---------------formulaire pour ajouter un enseignant---------->
+    <div *ngIf="showForm" class="card p-3 mt-3">
       <form [formGroup]="enseignantForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="prenom">Prénom</label>
-          <input type="text" class="form-control" formControlName="prenom" id="prenom" />
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="nom" class="form-label">Nom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nom"
+              formControlName="nom"
+              placeholder="Nom"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input
+              type="text"
+              class="form-control"
+              id="prenom"
+              formControlName="prenom"
+              placeholder="Prénom"
+            />
+          </div>
         </div>
-        <div class="form-group">
-          <label for="nom">Nom</label>
-          <input type="text" class="form-control" formControlName="nom" id="nom" />
+
+        <div class="mb-3">
+          <label for="telephone" class="form-label">Téléphone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="telephone"
+            formControlName="telephone"
+            placeholder="Numéro de Téléphone"
+          />
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" formControlName="email" id="email" />
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Adresse Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            placeholder="Email"
+          />
         </div>
-        <div class="form-group">
-          <label for="adresse">Adresse</label>
-          <input type="text" class="form-control" formControlName="adresse" id="adresse" />
+
+        <div class="mb-3">
+          <label for="adresse" class="form-label">Adresse</label>
+          <input
+            type="text"
+            class="form-control"
+            id="adresse"
+            formControlName="adresse"
+            placeholder="Adresse"
+          />
         </div>
-        <div class="form-group">
-          <label for="telephone">Téléphone</label>
-          <input type="text" class="form-control" formControlName="telephone" id="telephone" />
+
+        <div class="mb-3">
+          <label for="date_naissance" class="form-label"
+            >Date de Naissance</label
+          >
+          <input
+            type="date"
+            class="form-control"
+            id="date_naissance"
+            formControlName="dateNaissance"
+          />
         </div>
-        <div class="form-group">
-          <label for="dateNaissance">Date de Naissance</label>
-          <input type="date" class="form-control" formControlName="dateNaissance" id="dateNaissance" />
-        </div>
-        <div class="form-group d-flex justify-content-end mt-2">
-          <button type="submit" class="btn btn-warning btn-sm me-2">Modifier</button>
-          <button type="button" class="btn btn-danger btn-sm" (click)="deleteEnseignant(selectedEnseignant.id)">Supprimer</button>
+
+        <!-- Boutons du formulaire -->
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary">Ajouter</button>
         </div>
       </form>
     </div>
-  </div>
-</section>
+    <!-------------table des informations des enseignants--------->
+    <section class="p-3">
+      <div class="row">
+        <div class="table-responsive">
+          <table
+            class="table table-striped table-hover mt-3 text-center table-bordered"
+            id="enseignantTable"
+          >
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Adresse</th>
+                <th>Téléphone</th>
+                <!-- <th>Date de Naissance</th> -->
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let enseignant of filteredEnseignants">
+                <td>{{ enseignant.id }}</td>
+                <td>{{ enseignant.prenom }}</td>
+                <td>{{ enseignant.nom }}</td>
+                <td>{{ enseignant.email }}</td>
+                <td>{{ enseignant.adresse }}</td>
+                <td>{{ enseignant.telephone }}</td>
+                <!-- <td>{{ enseignant.dateNaissance }}</td> -->
+                <td>
+                  <button
+                    class="btn btn-primary btn-sm me-2"
+                    (click)="viewEnseignant(enseignant)"
+                  >
+                    Voir
+                  </button>
+                  <button
+                    class="btn btn-warning btn-sm"
+                    (click)="associateEnseignant(enseignant)"
+                  >
+                    Associer
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <!-----------------------------------------formulaire info--------------------------------->
 
+    <!-- Formulaire pour modifier ou supprimer un enseignant -->
+    <section *ngIf="selectedEnseignant" class="p-3">
+      <div class="row">
+        <div class="col-12">
+          <h3>Informations de l'Enseignant</h3>
+          <form [formGroup]="enseignantForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="prenom">Prénom</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="prenom"
+                id="prenom"
+              />
+            </div>
+            <div class="form-group">
+              <label for="nom">Nom</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="nom"
+                id="nom"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                formControlName="email"
+                id="email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="adresse">Adresse</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="adresse"
+                id="adresse"
+              />
+            </div>
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input
+                type="text"
+                class="form-control"
+                formControlName="telephone"
+                id="telephone"
+              />
+            </div>
+            <div class="form-group">
+              <label for="dateNaissance">Date de Naissance</label>
+              <input
+                type="date"
+                class="form-control"
+                formControlName="dateNaissance"
+                id="dateNaissance"
+              />
+            </div>
+            <div class="form-group d-flex justify-content-end mt-2">
+              <button type="submit" class="btn btn-warning btn-sm me-2">
+                Modifier
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="deleteEnseignant(selectedEnseignant.id)"
+              >
+                Supprimer
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   </div>
 </main>
