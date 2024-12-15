@@ -1,39 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
-import { catchError, map } from 'rxjs/operators'
-import { User } from '../user';
-
+import { Observable } from 'rxjs';
+import { Etudiant } from './etudiant.interface';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class EtudiantService {
-  private apiUrl = 'http://localhost:3000/etudiant';
+  private baseUrl = 'http://localhost:3000/etudiant'; // Ajustez l'URL selon votre backend
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  getAllEtudiant(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+  getAll(): Observable<Etudiant[]> {
+    return this.http.get<Etudiant[]>(`${this.baseUrl}`);
   }
-  deleteEtudiant(id: string): Observable<boolean> {
-    const apiUrl = `http://localhost:3000/etudiant/${id}`;
-    return this.http.delete(apiUrl).pipe(
-      map(() => {
-        console.log(`Etudiante with id ${id} deleted successfully.`);
-        return true;
-      }),
-      catchError((error) => {
-        console.error('Error deleting etudiante', error);
-        return of(false); // Wrap the value in an observable
-      })
-    );
-  }
-  addEtudiant(etudiant: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, etudiant);
-  }
-  editEtudiant(etudiant: User): Observable<User> {
-    // const id = Number(etudiant.id);
-    return this.http.put<User>(`${this.apiUrl}/${etudiant.id}`, etudiant);
+
+  add(etudiant: Etudiant): Observable<Etudiant> {
+    return this.http.post<Etudiant>(`${this.baseUrl}`, etudiant);
   }
 }

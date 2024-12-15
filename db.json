@@ -113,6 +113,14 @@
       "adresse": "30 rue agadir",
       "telephone": "66445509",
       "dateNaissance": "09/09/1993"
+    },
+    {
+      "id": null,
+      "nom": "jdir",
+      "prenom": "salwa ",
+      "telephone": "95784123",
+      "dateNaissance": "1990-04-04",
+      "adresse": "tn"
     }
   ],
   "enseignant": [
