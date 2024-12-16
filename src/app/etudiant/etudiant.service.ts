@@ -18,4 +18,12 @@ export class EtudiantService {
   add(etudiant: Etudiant): Observable<Etudiant> {
     return this.http.post<Etudiant>(`${this.baseUrl}`, etudiant);
   }
+
+  delete(id: number): Observable<void> { // Méthode pour supprimer un étudiant
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
+
+  update(id: number, etudiant: Etudiant): Observable<Etudiant> { // Méthode pour mettre à jour un étudiant
+    return this.http.put<Etudiant>(`${this.baseUrl}/${id}`, etudiant);
+  }
 }

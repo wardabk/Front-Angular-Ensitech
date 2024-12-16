@@ -69,80 +69,81 @@
       </div>
     </section>
 
-    <!-- Formulaire de création d'un étudiant -->
-    <div class="modal fade" id="studentFormContainer">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Ajouter un étudiant</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+   
+    <!-- Formulaire d'ajout ou modification d'un étudiant -->
+<div class="modal fade" id="studentFormContainer" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ newStudent.id ? 'Modifier' : 'Ajouter' }} un étudiant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input
+              type="text"
+              id="nom"
+              class="form-control"
+              [(ngModel)]="newStudent.nom"
+              name="nom"
+              required
+            />
           </div>
-          <div class="modal-body">
-            <form (ngSubmit)="addStudent()">
-              <div class="mb-3">
-                <label for="nom" class="form-label">Nom</label>
-                <input
-                  type="text"
-                  id="nom"
-                  class="form-control"
-                  [(ngModel)]="newStudent.nom"
-                  name="nom"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="prenom" class="form-label">Prénom</label>
-                <input
-                  type="text"
-                  id="prenom"
-                  class="form-control"
-                  [(ngModel)]="newStudent.prenom"
-                  name="prenom"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="telephone" class="form-label">Téléphone</label>
-                <input
-                  type="text"
-                  id="telephone"
-                  class="form-control"
-                  [(ngModel)]="newStudent.telephone"
-                  name="telephone"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="dateNaissance" class="form-label">Date de Naissance</label>
-                <input
-                  type="date"
-                  id="dateNaissance"
-                  class="form-control"
-                  [(ngModel)]="newStudent.dateNaissance"
-                  name="dateNaissance"
-                  required
-                />
-              </div>
-              <div class="mb-3">
-                <label for="adresse" class="form-label">Adresse</label>
-                <input
-                  type="text"
-                  id="adresse"
-                  class="form-control"
-                  [(ngModel)]="newStudent.adresse"
-                  name="adresse"
-                  required
-                />
-              </div>
-              <!-- Ajoutez les autres champs nécessaires ici -->
-            </form>
+          <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input
+              type="text"
+              id="prenom"
+              class="form-control"
+              [(ngModel)]="newStudent.prenom"
+              name="prenom"
+              required
+            />
           </div>
-          <div class="modal-footer">
-            <button class="btn btn-success" (click)="addStudent()">Ajouter</button>
+          <div class="mb-3">
+            <label for="telephone" class="form-label">Téléphone</label>
+            <input
+              type="text"
+              id="telephone"
+              class="form-control"
+              [(ngModel)]="newStudent.telephone"
+              name="telephone"
+              required
+            />
           </div>
-        </div>
+          <div class="mb-3">
+            <label for="dateNaissance" class="form-label">Date de Naissance</label>
+            <input
+              type="date"
+              id="dateNaissance"
+              class="form-control"
+              [(ngModel)]="newStudent.dateNaissance"
+              name="dateNaissance"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="adresse" class="form-label">Adresse</label>
+            <input
+              type="text"
+              id="adresse"
+              class="form-control"
+              [(ngModel)]="newStudent.adresse"
+              name="adresse"
+              required
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-success" (click)="saveStudent()">Enregistrer</button>
       </div>
     </div>
+  </div>
+</div>
+
 
     <!-- Modal pour les détails -->
     <div class="modal fade" id="detailsModal">
@@ -160,8 +161,10 @@
             <p><strong>Adresse:</strong> {{ selectedStudent.adresse }}</p>
           </div>
           <div class="modal-footer">
-            <button class="btn btn-danger" >Supprimer</button>
-            <button class="btn btn-success" >Modifier</button>
+            <button class="btn btn-danger" *ngIf="selectedStudent" (click)="deleteStudent(selectedStudent)">Supprimer</button>
+            <button class="btn btn-primary" *ngIf="selectedStudent" (click)="editStudent(selectedStudent)">Modifier</button>
+            <button class="btn btn-warning">Associer</button>
+
           </div>
         </div>
       </div>

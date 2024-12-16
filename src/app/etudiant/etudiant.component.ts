@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { EtudiantService } from './etudiant.service';
 import { Etudiant } from './etudiant.interface';
 import { EtudiantModel } from './etudiant.model';
+import * as bootstrap from 'bootstrap';
+
 
 @Component({
   selector: 'app-etudiant',
@@ -46,8 +48,9 @@ export class EtudiantComponent implements OnInit {
     if (this.newStudent.nom && this.newStudent.prenom && this.newStudent.telephone && this.newStudent.adresse) {
       this.etudiantService.add(this.newStudent).subscribe({
         next: student => {
-          this.students.push(EtudiantModel.fromJSON(student as any)); // Ajouter le nouvel étudiant à la liste
+          this.students.push(EtudiantModel.fromJSON(student as any));
           this.resetNewStudent();
+          this.loadStudents(); // Rafraîchir la liste après l'ajout
         },
         error: err => console.error('Error adding student', err)
       });
@@ -56,10 +59,72 @@ export class EtudiantComponent implements OnInit {
 
   viewDetails(student: Etudiant): void {
     this.selectedStudent = student;
-    // Suppression du modal, utilisation d'une autre méthode comme un composant de détails ou une autre approche pour afficher les informations
+  }
+
+  deleteStudent(student?: Etudiant): void {
+    if (student && student.id !== null) {
+      this.etudiantService.delete(student.id).subscribe({
+        next: () => {
+          console.log('Student deleted');
+          this.loadStudents(); // Rafraîchir la liste après la suppression
+          this.resetDetails(); // Réinitialiser les détails affichés
+        },
+        error: (err) => console.error('Error deleting student', err)
+      });
+    }
+    this.closeDetailsModal();
+  }
+
+  editStudent(student: Etudiant): void {
+    this.newStudent = { ...student }; // Cloner l'étudiant pour éviter les mutations
+    this.closeDetailsModal();
+    this.openModal();
+  }
+  
+  saveStudent(): void {
+    if (this.newStudent.id) {
+      this.updateStudent();
+    } else {
+      this.addStudent();
+    }
+  }
+  
+  updateStudent(): void {
+    this.etudiantService.update(this.newStudent.id!, this.newStudent).subscribe({
+      next: () => {
+        console.log('Étudiant mis à jour avec succès.');
+        this.loadStudents();
+        this.closeModal();
+      },
+      error: err => console.error('Erreur lors de la mise à jour', err)
+    });
+  }
+  
+  openModal(): void {
+    const modalElement = document.getElementById('studentFormContainer');
+    const modal = new bootstrap.Modal(modalElement!);
+    modal.show();
+  }
+  
+  closeModal(): void {
+    const modalElement = document.getElementById('studentFormContainer');
+    const modal = bootstrap.Modal.getInstance(modalElement!);
+    modal?.hide();
+  }
+  
+  private resetDetails(): void {
+    this.selectedStudent = null;
   }
 
   private resetNewStudent(): void {
     this.newStudent = new EtudiantModel({ id: null, nom: '', prenom: '', telephone: '', dateNaissance: new Date(), adresse: '' });
   }
+
+  closeDetailsModal(): void {
+    const modalElement = document.getElementById('detailsModal');
+    const modal = bootstrap.Modal.getInstance(modalElement!);
+    modal?.hide();
+  }
+  
+
 }
