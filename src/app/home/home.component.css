@@ -12,3 +12,16 @@
   font-weight: bold;
   color:#012970;
 }
+
+.chart-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.chart-title {
+  margin-top: 20px;
+  font-size: 1.3rem;
+  color: #012970;
+  font-weight: bold;
+}
+
