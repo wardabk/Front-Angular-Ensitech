@@ -36,6 +36,7 @@ export class NoteService {
 
             };
           });
+          // console.log("aaa out", result)
           observer.next(result);
           observer.complete();
         })
