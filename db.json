@@ -188,13 +188,20 @@
       "id": "4",
       "theme": "Docker",
       "nbreHeure": 10
-
+    },
+    {
+      "id": "5",
+      "theme": "electronique1",
+      "nbreHeure": 20
+    },
+    {
+      "id": "6",
+      "theme": "test",
+      "nbreHeure": 45
     }
-
   ],
   "note": [
     {
-
       "id": "1",
       "idEtudiant": "1",
       "idCours": "2",
@@ -214,6 +221,16 @@
       "idCours": "1",
       "idEnseignant": "2",
       "valeur": 8
+    },
+    {
+      "id": "4",
+      "idEtudiant": "1",
+      "nomEtudiant": "",
+      "idCours": "4",
+      "themeCours": "",
+      "idEnseignant": "2",
+      "nomEnseignant": "",
+      "valeur": 10
     }
   ]
 }
