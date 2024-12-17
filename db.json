@@ -41,8 +41,8 @@
       "adresse": "45 rue Dakar",
       "telephone": "66555503",
       "dateNaissance": "03/03/1990"
-  },
-  {
+    },
+    {
       "id": "3",
       "prenom": "Djimo",
       "nom": "Diallo",
@@ -50,16 +50,7 @@
       "adresse": "45 rue Dakar",
       "telephone": "66445503",
       "dateNaissance": "03/03/1990"
-  },
-  {
-      "id": "4",
-      "prenom": "Yosra",
-      "nom": "Mohamed",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
-      "telephone": "66445503",
-      "dateNaissance": "03/03/1990"
-  },
+    },
     {
       "id": null,
       "nom": "jdir",
@@ -67,6 +58,22 @@
       "telephone": "95784123",
       "dateNaissance": "1990-04-04",
       "adresse": "tn"
+    },
+    {
+      "id": null,
+      "nom": "jdir",
+      "prenom": "salwa ",
+      "telephone": "95784123",
+      "dateNaissance": "1990-04-04T00:00:00.000Z",
+      "adresse": "tunisie"
+    },
+    {
+      "id": null,
+      "nom": "ff",
+      "prenom": "gg",
+      "telephone": "555",
+      "dateNaissance": "2024-12-26",
+      "adresse": "ff"
     }
   ],
   "enseignant": [
