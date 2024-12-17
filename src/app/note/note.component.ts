@@ -85,6 +85,7 @@ export class NoteComponent implements OnInit, AfterViewInit {
     this.noteService.getAllNote().subscribe((data) => {
       this.listNote = data;
       this.filteredNote = data;
+      // console.log("aaa", this.filteredNote)
     });
 
     this.coursService.getAllCours().subscribe((data) => {
