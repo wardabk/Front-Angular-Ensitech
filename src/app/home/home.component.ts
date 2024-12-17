@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef, AfterViewInit} from '@angular
 import { CoursService } from 'src/app/cours/cours.service';
 import { EtudiantService } from 'src/app/etudiant/etudiant.service';
 import { EnseignantService } from 'src/app/enseignant/enseignant.service';
+import { NoteService } from 'src/app/note/note.service';
 import Chart from 'chart.js/auto';
 
 
@@ -25,11 +26,13 @@ export class HomeComponent implements OnInit, AfterViewInit {
   constructor(
     private EtudiantService: EtudiantService,
     private EnseignantService: EnseignantService,
-    private CoursService: CoursService
+    private CoursService: CoursService,
+    private NoteService: NoteService
   ) {}
 
 
   ngOnInit() {
+
     // Abonnement aux observables et récupération des données
     this.EtudiantService.getAll().subscribe(etudiants => {
       this.nombreEtudiants = etudiants.length;
@@ -50,63 +53,97 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
   }
 
+    ngAfterViewInit() {}
 
-    ngAfterViewInit() {
+    createPieChart() {
+      if (this.pieChart && this.pieChart.nativeElement) {
+        this.CoursService.getAllCours().subscribe((cours) => {
+          const coursLabels = cours.map((c) => c.theme); // Extraire les noms des cours
+          const coursCounts = cours.map(() => 1); // Chaque cours compte pour 1 unité
 
+          // Créer le Pie Chart
+          new Chart(this.pieChart.nativeElement, {
+            type: 'pie',
+            data: {
+              labels: coursLabels, // Les noms des cours comme labels
+              datasets: [
+                {
+                  data: coursCounts, // Chaque cours a une valeur de 1
+                  backgroundColor: this.generateColors(cours.length), // Générer des couleurs dynamiquement
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              plugins: {
+                legend: {
+                  position: 'top',
+                },
+              },
+            },
+          });
+        });
+      }
+    }
+
+    // Méthode pour générer des couleurs aléatoires pour le Pie Chart
+    generateColors(count: number): string[] {
+      const colors = [];
+      for (let i = 0; i < count; i++) {
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        colors.push(`rgba(${r}, ${g}, ${b}, 0.7)`);
+      }
+      return colors;
     }
 
 
-  createPieChart() {
-    if (this.pieChart && this.pieChart.nativeElement){
-    new Chart(this.pieChart.nativeElement, {
-      type: 'pie',
-      data: {
-        labels: ['Étudiants', 'Enseignants', 'Cours'],
-        datasets: [{
-          data: [
+createBarChart() {
+  if (this.barChart && this.barChart.nativeElement) {
+    this.NoteService.getAllNote().subscribe((notes) => {
 
-            this.nombreEtudiants,
-            this.nombreEnseignants,
-            this.nombreCours,
+      // Récupérer les noms et les notes des étudiants
+      const etudiantNames = notes.map((note) => note.nomEtudiant ); // Remplacez 'nom' par le champ exact de l'étudiant
+      const etudiantGrades = notes.map((note) => note.valeur); // Remplacez 'note' par le champ exact des notes des étudiants
+      const matieres = notes.map((note) => note.themeCours); // Matières associées
 
-          ],
-          backgroundColor: [
-
-            'rgba(54, 162, 235, 0.7)',
-            'rgba(255, 182, 193, 0.7)',
-            'rgba(255, 206, 86, 0.7)'
-
-          ]
-        }]
-      }
+      // Créer le Bar Chart avec les données des étudiants
+      new Chart(this.barChart.nativeElement, {
+        type: 'bar',
+        data: {
+          labels: etudiantNames, // Noms des étudiants comme labels
+          datasets: [{
+            label: 'Notes des étudiants',
+            data: etudiantGrades, // Notes des étudiants
+            backgroundColor: 'rgba(75, 192, 192, 0.7)' , // Couleur des barres
+          }],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: {
+              position: 'top',
+            },
+            tooltip: {
+              callbacks: {
+                // Ajouter la matière dans les tooltips
+                label: function(tooltipItem) {
+                  const index = tooltipItem.dataIndex;
+                  return `Note: ${tooltipItem.raw}, Matière: ${matieres[index]}`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true, // Commencer l'axe Y à 0
+            },
+          },
+        },
+      });
     });
   }
 }
 
-  createBarChart() {
-    if (this.barChart && this.barChart.nativeElement) {
-    new Chart(this.barChart.nativeElement, {
-      type: 'bar',
-      data: {
-        labels: ['Étudiants', 'Enseignants', 'Cours'],
-        datasets: [{
-          label: 'Nombre par catégorie',
-          data: [
-
-            this.nombreEtudiants,
-            this.nombreEnseignants,
-            this.nombreCours,
-          ],
-          backgroundColor: [
-
-            'rgba(54, 162, 235, 0.7)',
-            'rgba(255, 182, 193, 0.7)',
-            'rgba(255, 206, 86, 0.7)'
-
-          ]
-        }]
-      }
-    });
-  }
-}
 }
