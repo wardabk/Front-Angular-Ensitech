@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,6 +14,7 @@ import { SigninComponent } from './signin/signin.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NoteComponent,
     HomeComponent,
     SigninComponent,
-    SideBarComponent
+    SideBarComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,10 +32,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent],
 
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

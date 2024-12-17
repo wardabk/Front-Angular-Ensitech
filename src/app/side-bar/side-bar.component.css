@@ -26,12 +26,15 @@ body {
     background-color: #fff;
 }
 
+.logo{
+  text-decoration: none;
+}
+
 .logo span {
     font-size: 26px;
     font-weight: 700;
     color: #012970;
     width: 280px;
-    ;
 }
 
 .header {
