@@ -74,6 +74,14 @@
       "telephone": "555",
       "dateNaissance": "2024-12-26",
       "adresse": "ff"
+    },
+    {
+      "id": null,
+      "nom": "jridi",
+      "prenom": "Pierre",
+      "telephone": "777",
+      "dateNaissance": "2024-12-27",
+      "adresse": "gg"
     }
   ],
   "enseignant": [
