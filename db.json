@@ -76,30 +76,53 @@
     },
     {
       "id": "3",
-      "theme": "Algorithmique",
-      "nbreHeure": 4
+      "theme": "Algo",
+      "nbreHeure": 14
+    },
+    {
+      "id": "4",
+      "theme": "Docker",
+      "nbreHeure": 10
     }
   ],
   "note": [
     {
       "id": "1",
+<<<<<<< HEAD
       "idEtudiant": 1,
       "idCours": 2,
       "idEnseignant": 1,
+=======
+      "idEtudiant": "1",
+      "idCours": "2",
+      "idEnseignant": "1",
+>>>>>>> origin/features-cours
       "valeur": 15
     },
     {
       "id": "2",
+<<<<<<< HEAD
       "idEtudiant": 2,
       "idCours": 3,
       "idEnseignant": 2,
+=======
+      "idEtudiant": "2",
+      "idCours": "3",
+      "idEnseignant": "2",
+>>>>>>> origin/features-cours
       "valeur": 12
     },
     {
       "id": "3",
+<<<<<<< HEAD
       "idEtudiant": 2,
       "idCours": 1,
       "idEnseignant": 2,
+=======
+      "idEtudiant": "2",
+      "idCours": "1",
+      "idEnseignant": "2",
+>>>>>>> origin/features-cours
       "valeur": 8
     }
   ]
