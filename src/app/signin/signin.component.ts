@@ -13,15 +13,21 @@ export class SigninComponent {
   password = '';
   error = '';
 
+
   constructor(private authService: AuthService, private router: Router) {
 
   }
 
   signIn(): void {
+    // Réinitialiser l'erreur au début
+    this.error = '';
     if (!this.email || !this.password) {
       this.error = 'email et mot de passe requis';
       return;
     }
+
+
+
     this.authService.login(this.email, this.password).subscribe(
       (isAuthenticated) => {
         if (isAuthenticated) {
@@ -37,7 +43,9 @@ export class SigninComponent {
         }
       },
       (err) => {
+       
         this.error = "Une erreur s'est produite";
+        console.error('Erreur d\'authentification:', err); // Enregistrer l'erreur pour débogage
       }
     );
   }
