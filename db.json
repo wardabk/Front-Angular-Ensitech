@@ -41,78 +41,6 @@
       "adresse": "15 avn tn",
       "telephone": "66445501",
       "dateNaissance": "01/01/1980"
-    },
-    {
-      "id": "3",
-      "prenom": "Sophie",
-      "nom": "Toure",
-      "email": "sophie@gmail.com",
-      "adresse": "22 rue abidjan",
-      "telephone": "66445502",
-      "dateNaissance": "02/02/1992"
-    },
-    {
-      "id": "4",
-      "prenom": "Mohamed",
-      "nom": "Diallo",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue dakar",
-      "telephone": "66445503",
-      "dateNaissance": "03/03/1990"
-    },
-    {
-      "id": "5",
-      "prenom": "Fatou",
-      "nom": "Ba",
-      "email": "fatou@gmail.com",
-      "adresse": "25 avenue sahel",
-      "telephone": "66445504",
-      "dateNaissance": "04/04/1985"
-    },
-    {
-      "id": "6",
-      "prenom": "Alioune",
-      "nom": "Sarr",
-      "email": "alioune@gmail.com",
-      "adresse": "35 rue liverpool",
-      "telephone": "66445505",
-      "dateNaissance": "05/05/1995"
-    },
-    {
-      "id": "7",
-      "prenom": "Amir",
-      "nom": "Sall",
-      "email": "amir@gmail.com",
-      "adresse": "11 rue lome",
-      "telephone": "66445506",
-      "dateNaissance": "06/06/1988"
-    },
-    {
-      "id": "8",
-      "prenom": "Marie",
-      "nom": "Sy",
-      "email": "marie@gmail.com",
-      "adresse": "50 rue paris",
-      "telephone": "66445507",
-      "dateNaissance": "07/07/1982"
-    },
-    {
-      "id": "9",
-      "prenom": "Ousmane",
-      "nom": "Gueye",
-      "email": "ousmane@gmail.com",
-      "adresse": "13 rue madrid",
-      "telephone": "66445508",
-      "dateNaissance": "08/08/1987"
-    },
-    {
-      "id": "10",
-      "prenom": "Kadiatou",
-      "nom": "Dieng",
-      "email": "kadiatou@gmail.com",
-      "adresse": "30 rue agadir",
-      "telephone": "66445509",
-      "dateNaissance": "09/09/1993"
     }
   ],
   "enseignant": [
@@ -133,78 +61,6 @@
       "adresse": "15 avn tn",
       "telephone": "88445501",
       "dateNaissance": "01/01/1980"
-    },
-    {
-      "id": "3",
-      "prenom": "Abdoulaye",
-      "nom": "Diouf",
-      "email": "abdoulaye@gmail.com",
-      "adresse": "20 rue carrefour",
-      "telephone": "88445502",
-      "dateNaissance": "02/02/1975"
-    },
-    {
-      "id": "4",
-      "prenom": "Mariama",
-      "nom": "Ndiaye",
-      "email": "mariama@gmail.com",
-      "adresse": "40 rue dakar",
-      "telephone": "88445503",
-      "dateNaissance": "03/03/1981"
-    },
-    {
-      "id": "5",
-      "prenom": "Ibrahime",
-      "nom": "Mbaye",
-      "email": "ibrahime@gmail.com",
-      "adresse": "30 rue de paris",
-      "telephone": "88445504",
-      "dateNaissance": "04/04/1978"
-    },
-    {
-      "id": "6",
-      "prenom": "Ndeye",
-      "nom": "Fall",
-      "email": "ndeye@gmail.com",
-      "adresse": "50 rue saint-louis",
-      "telephone": "88445505",
-      "dateNaissance": "05/05/1983"
-    },
-    {
-      "id": "7",
-      "prenom": "Moussa",
-      "nom": "Fall",
-      "email": "moussa@gmail.com",
-      "adresse": "12 rue des champs",
-      "telephone": "88445506",
-      "dateNaissance": "06/06/1986"
-    },
-    {
-      "id": "8",
-      "prenom": "Khadim",
-      "nom": "Gueye",
-      "email": "khadim@gmail.com",
-      "adresse": "15 rue des artisans",
-      "telephone": "88445507",
-      "dateNaissance": "07/07/1990"
-    },
-    {
-      "id": "9",
-      "prenom": "Seyni",
-      "nom": "Thiam",
-      "email": "seyni@gmail.com",
-      "adresse": "60 rue ankara",
-      "telephone": "88445508",
-      "dateNaissance": "08/08/1982"
-    },
-    {
-      "id": "10",
-      "prenom": "Aminata",
-      "nom": "Diagne",
-      "email": "aminata@gmail.com",
-      "adresse": "100 rue des lilas",
-      "telephone": "88445509",
-      "dateNaissance": "09/09/1979"
     }
   ],
   "cours": [
@@ -222,75 +78,29 @@
       "id": "3",
       "theme": "Algorithmique",
       "nbreHeure": 4
-    },
-    {
-      "id": "4",
-
-      "theme": "Docker",
-      "nbreHeure": 12
-    },
-    {
-      "id": "5",
-      "theme": "Bootstrap",
-      "nbreHeure": 16
-    },
-    {
-      "id": 6,
-
-      "theme": "electronique",
-      "nbreHeure": 10
     }
   ],
   "note": [
     {
       "id": "1",
-      "idEtudiant": "1",
-      "idCours": "3",
-      "idEnseignant": "1",
-      "valeur": 15,
-      "nomEtudiant": "Aicha Bendjir",
-      "nomEnseignant": "Oumou Sow",
-      "themeCours": "Conception"
+      "idEtudiant": 1,
+      "idCours": 2,
+      "idEnseignant": 1,
+      "valeur": 15
     },
     {
       "id": "2",
-      "idEtudiant": "2",
-      "idCours": "2",
-      "idEnseignant": "2",
-      "valeur": 15,
-      "nomEtudiant": "Jean Batiste Goumou",
-      "nomEnseignant": "Cheikh Oumar Diakité",
-      "themeCours": "Algorithmique"
+      "idEtudiant": 2,
+      "idCours": 3,
+      "idEnseignant": 2,
+      "valeur": 12
     },
     {
       "id": "3",
-      "idEtudiant": "1",
-      "idCours": "1",
-      "idEnseignant": "2",
-      "valeur": 19,
-      "nomEtudiant": "Aicha Bendjir",
-      "nomEnseignant": "Cheikh Oumar Diakité",
-      "themeCours": "Réseau"
-    },
-    {
-      "id": "4",
-      "idEtudiant": "8",
-      "nomEtudiant": "Marie Sy",
-      "idCours": "3",
-      "themeCours": "Algorithmique",
-      "idEnseignant": "9",
-      "nomEnseignant": "Seyni Thiam",
-      "valeur": 11
-    },
-    {
-      "id": "5",
-      "idEtudiant": "5",
-      "nomEtudiant": "",
-      "idCours": "5",
-      "themeCours": "",
-      "idEnseignant": "6",
-      "nomEnseignant": "",
-      "valeur": 15
+      "idEtudiant": 2,
+      "idCours": 1,
+      "idEnseignant": 2,
+      "valeur": 8
     }
   ]
 }
