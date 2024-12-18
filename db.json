@@ -25,7 +25,79 @@
   ],
   "etudiant": [
     {
-      "id": "1",
+      "id": "3",
+      "nom": "Toure",
+      "prenom": "Sophie",
+      "telephone": "66445502",
+      "dateNaissance": "1992-02-02T00:00:00.000Z",
+      "adresse": "22 rue abidjan",
+      "theme": "Réseau"
+    },
+    {
+      "id": "4",
+      "nom": "Diallo",
+      "prenom": "Mohamed",
+      "telephone": "66445503",
+      "dateNaissance": "1990-03-03T00:00:00.000Z",
+      "adresse": "45 rue dakar",
+      "theme": "Conception"
+    },
+    {
+      "id": "5",
+      "prenom": "Fatou",
+      "nom": "Ba",
+      "email": "fatou@gmail.com",
+      "adresse": "25 avenue sahel",
+      "telephone": "66445504",
+      "dateNaissance": "04/04/1985"
+    },
+    {
+      "id": "6",
+      "prenom": "Alioune",
+      "nom": "Sarr",
+      "email": "alioune@gmail.com",
+      "adresse": "35 rue liverpool",
+      "telephone": "66445505",
+      "dateNaissance": "05/05/1995"
+    },
+    {
+      "id": "7",
+      "prenom": "Amir",
+      "nom": "Sall",
+      "email": "amir@gmail.com",
+      "adresse": "11 rue lome",
+      "telephone": "66445506",
+      "dateNaissance": "06/06/1988"
+    },
+    {
+      "id": "8",
+      "prenom": "Marie",
+      "nom": "Sy",
+      "email": "marie@gmail.com",
+      "adresse": "50 rue paris",
+      "telephone": "66445507",
+      "dateNaissance": "07/07/1982"
+    },
+    {
+      "id": "9",
+      "prenom": "Ousmane",
+      "nom": "Gueye",
+      "email": "ousmane@gmail.com",
+      "adresse": "13 rue madrid",
+      "telephone": "66445508",
+      "dateNaissance": "08/08/1987"
+    },
+    {
+      "id": "10",
+      "prenom": "Kadiatou",
+      "nom": "Dieng",
+      "email": "kadiatou@gmail.com",
+      "adresse": "30 rue agadir",
+      "telephone": "66445509",
+      "dateNaissance": "09/09/1993"
+    },
+    {
+      "id": "11",
       "prenom": "Jean Batiste",
       "nom": "Goumou",
       "email": "jean@gmail.com",
@@ -34,39 +106,66 @@
       "dateNaissance": "01/01/1980"
     },
     {
-      "id": "2",
-      "prenom": "Sarra",
-      "nom": "Diallo",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
-      "telephone": "66555503",
-      "dateNaissance": "03/03/1990"
-  },
-  {
-      "id": "3",
-      "prenom": "Djimo",
-      "nom": "Diallo",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
-      "telephone": "66445503",
-      "dateNaissance": "03/03/1990"
-  },
-  {
-      "id": "4",
-      "prenom": "Yosra",
-      "nom": "Mohamed",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
-      "telephone": "66445503",
-      "dateNaissance": "03/03/1990"
-  },
+      "id": "12",
+      "prenom": "Sophie",
+      "nom": "Toure",
+      "email": "sophie@gmail.com",
+      "adresse": "22 rue abidjan",
+      "telephone": "66445502",
+      "dateNaissance": "02/02/1992"
+    },
+    {
+      "id": "13",
+      "prenom": "Sophie",
+      "nom": "Toure",
+      "email": "sophie@gmail.com",
+      "adresse": "22 rue abidjan",
+      "telephone": "66445502",
+      "dateNaissance": "02/02/1992"
+    },
+    {
+      "id": "14",
+      "prenom": "Alioune",
+      "nom": "Sarr",
+      "email": "alioune@gmail.com",
+      "adresse": "35 rue liverpool",
+      "telephone": "66445505",
+      "dateNaissance": "05/05/1995"
+    },
+    {
+      "id": "14",
+      "nom": "Sarr",
+      "prenom": "Alioune",
+      "email": "alioune@gmail.com",
+      "telephone": "66445505",
+      "adresse": "35 rue liverpool",
+      "dateNaissance": "05/05/1995"
+    },
+    {
+      "id": "15",
+      "nom": "Goumou",
+      "prenom": "Jean Batiste",
+      "email": "jean@gmail.com",
+      "telephone": "66445501",
+      "adresse": "15 avn tn",
+      "dateNaissance": "01/01/1980"
+    },
+    {
+      "id": "16",
+      "prenom": "Ousmane",
+      "nom": "Gueye",
+      "email": "ousmane@gmail.com",
+      "adresse": "13 rue madrid",
+      "telephone": "66445508",
+      "dateNaissance": "08/08/1987"
+    },
     {
       "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04",
-      "adresse": "tn"
+      "nom": "Gassama",
+      "prenom": "Djimo",
+      "telephone": "773818776",
+      "dateNaissance": "2024-11-25",
+      "adresse": "Dakar, Keur Massar"
     }
   ],
   "enseignant": [

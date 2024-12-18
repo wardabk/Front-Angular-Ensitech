@@ -159,12 +159,39 @@
             <p><strong>Téléphone:</strong> {{ selectedStudent.telephone }}</p>
             <p><strong>Date de Naissance:</strong> {{ selectedStudent.dateNaissance | date }}</p>
             <p><strong>Adresse:</strong> {{ selectedStudent.adresse }}</p>
+            <p><strong>Cours:</strong>{{ selectedStudent?.theme || 'Aucun cours associé' }}</p>
           </div>
           <div class="modal-footer">
             <button class="btn btn-danger" *ngIf="selectedStudent" (click)="deleteStudent(selectedStudent)">Supprimer</button>
             <button class="btn btn-primary" *ngIf="selectedStudent" (click)="editStudent(selectedStudent)">Modifier</button>
-            <button class="btn btn-warning">Associer</button>
+            <button class="btn btn-warning" (click)="openLinkModal()" (click)="closeDetailsModal()">Associer</button>
 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal pour Associer cours -->
+    <div class="modal fade" id="linkModal">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Associer l'étudiant à un cours</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label class="col-12">Liste des cours</label>
+            <div class="col-12">
+              <select name="cours" id="cours" [(ngModel)]="selectedCourse">
+                <option>Sélectioner</option>
+                <option [ngValue]="course" *ngFor="let course of courList">
+                  {{course.theme}}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-warning" (click)="changeCours()" (click)="savedCourse()">Associer</button>
           </div>
         </div>
       </div>

@@ -36,4 +36,8 @@ export class CoursService {
     // const id = Number(cours.id);
     return this.http.put<Cours>(`${this.apiUrl}/${cours.id}`, cours);
   }
+
+  changedCours(cours: Cours): void {
+      this.http.get<Cours>(`http://localhost:3000/cours/${cours.id}`)
+  }
 }

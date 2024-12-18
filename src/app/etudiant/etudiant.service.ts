@@ -26,4 +26,11 @@ export class EtudiantService {
   update(id: number, etudiant: Etudiant): Observable<Etudiant> { // Méthode pour mettre à jour un étudiant
     return this.http.put<Etudiant>(`${this.baseUrl}/${id}`, etudiant);
   }
+
+  associateCourse(student: Etudiant): Observable<any> {
+    const url = `${this.baseUrl}/${student.id}`;
+    return this.http.put(url, student);
+  }
+  
+  
 }
