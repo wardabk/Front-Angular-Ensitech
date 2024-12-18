@@ -106,7 +106,7 @@ createBarChart() {
       // Récupérer les noms et les notes des étudiants
       const etudiantNames = notes.map((note) => note.nomEtudiant ); // Remplacez 'nom' par le champ exact de l'étudiant
       const etudiantGrades = notes.map((note) => note.valeur); // Remplacez 'note' par le champ exact des notes des étudiants
-      const matieres = notes.map((note) => note.themeCours); // Matières associées
+      const cours = notes.map((note) => note.themeCours); // Matières associées
 
       // Créer le Bar Chart avec les données des étudiants
       new Chart(this.barChart.nativeElement, {
@@ -130,7 +130,7 @@ createBarChart() {
                 // Ajouter la matière dans les tooltips
                 label: function(tooltipItem) {
                   const index = tooltipItem.dataIndex;
-                  return `Note: ${tooltipItem.raw}, Matière: ${matieres[index]}`;
+                  return `Note: ${tooltipItem.raw}, cours: ${cours[index]}`;
                 }
               }
             }
