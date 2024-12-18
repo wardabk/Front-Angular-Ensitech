@@ -216,6 +216,16 @@
       "idCours": "1",
       "idEnseignant": "2",
       "valeur": 8
+    },
+    {
+      "id": "4",
+      "idEtudiant": "2",
+      "nomEtudiant": "",
+      "idCours": "4",
+      "themeCours": "",
+      "idEnseignant": "4",
+      "nomEnseignant": "",
+      "valeur": 40
     }
   ]
 }
