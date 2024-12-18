@@ -209,14 +209,13 @@
       "id": "5",
       "theme": "electronique1",
       "nbreHeure": 20
-<<<<<<< HEAD
+
     },
     {
       "id": "6",
       "theme": "test",
       "nbreHeure": 45
-=======
->>>>>>> 31e4fccc18ef063b50778b39953a63891d973dc1
+
     }
   ],
   "note": [
