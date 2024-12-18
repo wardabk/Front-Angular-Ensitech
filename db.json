@@ -193,11 +193,6 @@
       "id": "5",
       "theme": "electronique1",
       "nbreHeure": 20
-    },
-    {
-      "id": "7",
-      "theme": "angular",
-      "nbreHeure": 20
     }
   ],
   "note": [
@@ -221,16 +216,6 @@
       "idCours": "1",
       "idEnseignant": "2",
       "valeur": 8
-    },
-    {
-      "id": "4",
-      "idEtudiant": "1",
-      "nomEtudiant": "",
-      "idCours": "4",
-      "themeCours": "",
-      "idEnseignant": "2",
-      "nomEnseignant": "",
-      "valeur": 10
     }
   ]
 }
