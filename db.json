@@ -26,6 +26,15 @@
   "etudiant": [
     {
       "id": "1",
+      "prenom": "Aicha",
+      "nom": "Bendjir",
+      "email": "aicha@gmail.com",
+      "adresse": "15 avn tn",
+      "telephone": "66445500",
+      "dateNaissance": "01/01/1980"
+    },
+    {
+      "id": "2",
       "prenom": "Jean Batiste",
       "nom": "Goumou",
       "email": "jean@gmail.com",
@@ -34,46 +43,76 @@
       "dateNaissance": "01/01/1980"
     },
     {
-      "id": "2",
-      "prenom": "Sarra",
-      "nom": "Diallo",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
-      "telephone": "66555503",
-      "dateNaissance": "03/03/1990"
+      "id": "3",
+      "prenom": "Sophie",
+      "nom": "Toure",
+      "email": "sophie@gmail.com",
+      "adresse": "22 rue abidjan",
+      "telephone": "66445502",
+      "dateNaissance": "02/02/1992"
     },
     {
-      "id": "3",
-      "prenom": "Djimo",
+      "id": "4",
+      "prenom": "Mohamed",
       "nom": "Diallo",
       "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
+      "adresse": "45 rue dakar",
       "telephone": "66445503",
       "dateNaissance": "03/03/1990"
     },
     {
-      "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04",
-      "adresse": "tn"
+      "id": "5",
+      "prenom": "Fatou",
+      "nom": "Ba",
+      "email": "fatou@gmail.com",
+      "adresse": "25 avenue sahel",
+      "telephone": "66445504",
+      "dateNaissance": "04/04/1985"
     },
     {
-      "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04T00:00:00.000Z",
-      "adresse": "tunisie"
+      "id": "6",
+      "prenom": "Alioune",
+      "nom": "Sarr",
+      "email": "alioune@gmail.com",
+      "adresse": "35 rue liverpool",
+      "telephone": "66445505",
+      "dateNaissance": "05/05/1995"
     },
     {
-      "id": null,
-      "nom": "ff",
-      "prenom": "gg",
-      "telephone": "555",
-      "dateNaissance": "2024-12-26",
-      "adresse": "ff"
+      "id": "7",
+      "prenom": "Amir",
+      "nom": "Sall",
+      "email": "amir@gmail.com",
+      "adresse": "11 rue lome",
+      "telephone": "66445506",
+      "dateNaissance": "06/06/1988"
+    },
+    {
+      "id": "8",
+      "prenom": "Marie",
+      "nom": "Sy",
+      "email": "marie@gmail.com",
+      "adresse": "50 rue paris",
+      "telephone": "66445507",
+      "dateNaissance": "07/07/1982"
+    },
+    {
+      "id": "9",
+      "prenom": "Ousmane",
+      "nom": "Gueye",
+      "email": "ousmane@gmail.com",
+      "adresse": "13 rue madrid",
+      "telephone": "66445508",
+      "dateNaissance": "08/08/1987"
+    },
+    {
+      "id": "10",
+      "prenom": "Kadiatou",
+      "nom": "Dieng",
+      "email": "kadiatou@gmail.com",
+      "adresse": "30 rue agadir",
+      "telephone": "66445509",
+      "dateNaissance": "09/09/1993"
     }
   ],
   "enseignant": [
@@ -181,23 +220,13 @@
     },
     {
       "id": "3",
-      "theme": "Algo",
-      "nbreHeure": 14
+      "theme": "Algorithmique",
+      "nbreHeure": 4
     },
     {
       "id": "4",
       "theme": "Docker",
-      "nbreHeure": 10
-    },
-    {
-      "id": "5",
-      "theme": "electronique1",
-      "nbreHeure": 20
-    },
-    {
-      "id": "7",
-      "theme": "angular",
-      "nbreHeure": 20
+      "nbreHeure": 18
     }
   ],
   "note": [
@@ -224,13 +253,13 @@
     },
     {
       "id": "4",
-      "idEtudiant": "1",
-      "nomEtudiant": "",
+      "idEtudiant": "7",
+      "nomEtudiant": "Amir Sall",
       "idCours": "4",
-      "themeCours": "",
-      "idEnseignant": "2",
-      "nomEnseignant": "",
-      "valeur": 10
+      "themeCours": "Docker",
+      "idEnseignant": "4",
+      "nomEnseignant": "Cheikh Oumar Diakité",
+      "valeur": 12
     }
   ]
 }
