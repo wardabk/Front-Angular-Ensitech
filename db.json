@@ -26,12 +26,24 @@
   "etudiant": [
     {
       "id": "1",
-      "prenom": "Aicha",
-      "nom": "Bendjir",
+      "prenom": "Aicha//",
+      "nom": "Bendjir//",
       "email": "aicha@gmail.com",
       "adresse": "15 avn tn",
-      "telephone": "66445500",
-      "dateNaissance": "01/01/1980"
+      "telephone": 3675656,
+      "dateNaissance": "1950-12-15",
+      "cours": [
+        {
+          "id": "1",
+          "theme": "Réseau",
+          "nbreHeure": 8
+        },
+        {
+          "id": "2",
+          "theme": "Conception",
+          "nbreHeure": 16
+        }
+      ]
     },
     {
       "id": "2",
@@ -106,13 +118,22 @@
       "dateNaissance": "08/08/1987"
     },
     {
-      "id": "10",
-      "prenom": "Kadiatou",
-      "nom": "Dieng",
-      "email": "kadiatou@gmail.com",
-      "adresse": "30 rue agadir",
-      "telephone": "66445509",
-      "dateNaissance": "09/09/1993"
+      "id": "11",
+      "nom": "dsd",
+      "prenom": "zezere",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 7826452863,
+      "dateNaissance": "2000-12-15",
+      "cours": [
+        {
+          "id": "5",
+          "theme": "Agilité",
+          "nbreHeure": 10
+        }
+      ]
     }
   ],
   "enseignant": [
@@ -123,7 +144,24 @@
       "email": "oumou@gmail.com",
       "adresse": "15 avn tn",
       "telephone": "88445500",
-      "dateNaissance": "01/01/1980"
+      "dateNaissance": "01/01/1980",
+      "cours": [
+        {
+          "id": "1",
+          "theme": "Réseau",
+          "nbreHeure": 8
+        },
+        {
+          "id": "2",
+          "theme": "Conception",
+          "nbreHeure": 16
+        },
+        {
+          "id": "5",
+          "theme": "Agilité",
+          "nbreHeure": 10
+        }
+      ]
     },
     {
       "id": "2",
@@ -132,7 +170,14 @@
       "email": "cheikh@gmail.com",
       "adresse": "15 avn tn",
       "telephone": "88445501",
-      "dateNaissance": "01/01/1980"
+      "dateNaissance": "01/01/1980",
+      "cours": [
+        {
+          "id": "3",
+          "theme": "Algorithmique",
+          "nbreHeure": 4
+        }
+      ]
     },
     {
       "id": "3",
@@ -205,6 +250,54 @@
       "adresse": "100 rue des lilas",
       "telephone": "88445509",
       "dateNaissance": "09/09/1979"
+    },
+    {
+      "id": "11",
+      "nom": "ade",
+      "prenom": "adfsq",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 8451236,
+      "dateNaissance": "2004-02-15",
+      "cours": []
+    },
+    {
+      "id": "12",
+      "nom": "zerd",
+      "prenom": "fuyhj",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 8534,
+      "dateNaissance": "1996-02-15",
+      "cours": [
+        {
+          "id": "1",
+          "theme": "Réseau",
+          "nbreHeure": 8
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "nom": "dss",
+      "prenom": "hjuykj",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 85147632621,
+      "dateNaissance": "1996-12-15",
+      "cours": [
+        {
+          "id": "3",
+          "theme": "Algorithmique",
+          "nbreHeure": 4
+        }
+      ]
     }
   ],
   "cours": [
@@ -227,6 +320,11 @@
       "id": "4",
       "theme": "Docker",
       "nbreHeure": 18
+    },
+    {
+      "id": "5",
+      "theme": "Agilité",
+      "nbreHeure": 10
     }
   ],
   "note": [
