@@ -26,6 +26,27 @@
   "etudiant": [
     {
       "id": "1",
+      "prenom": "Aicha//",
+      "nom": "Bendjir//",
+      "email": "aicha@gmail.com",
+      "adresse": "15 avn tn",
+      "telephone": 3675656,
+      "dateNaissance": "1950-12-15",
+      "cours": [
+        {
+          "id": "1",
+          "theme": "Réseau",
+          "nbreHeure": 8
+        },
+        {
+          "id": "2",
+          "theme": "Conception",
+          "nbreHeure": 16
+        }
+      ]
+    },
+    {
+      "id": "2",
       "prenom": "Jean Batiste",
       "nom": "Goumou",
       "email": "jean@gmail.com",
@@ -34,63 +55,69 @@
       "dateNaissance": "01/01/1980"
     },
     {
-      "id": "2",
-      "prenom": "Sarra",
-      "nom": "Diallo",
-      "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
-      "telephone": "66555503",
-      "dateNaissance": "03/03/1990"
+      "id": "3",
+      "prenom": "Sophie",
+      "nom": "Toure",
+      "email": "sophie@gmail.com",
+      "adresse": "22 rue abidjan",
+      "telephone": "66445502",
+      "dateNaissance": "02/02/1992"
     },
     {
-      "id": "3",
-      "prenom": "Djimo",
+      "id": "4",
+      "prenom": "Mohamed",
       "nom": "Diallo",
       "email": "mohamed@gmail.com",
-      "adresse": "45 rue Dakar",
+      "adresse": "45 rue dakar",
       "telephone": "66445503",
       "dateNaissance": "03/03/1990"
     },
     {
-      "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04",
-      "adresse": "tn"
+      "id": "5",
+      "prenom": "Fatou",
+      "nom": "Ba",
+      "email": "fatou@gmail.com",
+      "adresse": "25 avenue sahel",
+      "telephone": "66445504",
+      "dateNaissance": "04/04/1985"
     },
     {
-      "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04T00:00:00.000Z",
-      "adresse": "tunisie"
+      "id": "6",
+      "prenom": "Alioune",
+      "nom": "Sarr",
+      "email": "alioune@gmail.com",
+      "adresse": "35 rue liverpool",
+      "telephone": "66445505",
+      "dateNaissance": "05/05/1995"
     },
     {
-      "id": null,
-      "nom": "ff",
-      "prenom": "gg",
-      "telephone": "555",
-      "dateNaissance": "2024-12-26",
-      "adresse": "ff"
+      "id": "7",
+      "prenom": "Amir",
+      "nom": "Sall",
+      "email": "amir@gmail.com",
+      "adresse": "11 rue lome",
+      "telephone": "66445506",
+      "dateNaissance": "06/06/1988"
     },
     {
-      "id": null,
-      "nom": "jridi",
-      "prenom": "Pierre",
-      "telephone": "777",
-      "dateNaissance": "2024-12-27",
-      "adresse": "gg"
+      "id": "8",
+      "prenom": "Marie",
+      "nom": "Sy",
+      "email": "marie@gmail.com",
+      "adresse": "50 rue paris",
+      "telephone": "66445507",
+      "dateNaissance": "07/07/1982"
     },
     {
-      "id": null,
-      "nom": "jridi",
-      "prenom": "Pierreii",
-      "telephone": "7775555",
-      "dateNaissance": "2024-12-18",
-      "adresse": "gg"
-    }
+      "id": "9",
+      "prenom": "Ousmane",
+      "nom": "Gueye",
+      "email": "ousmane@gmail.com",
+      "adresse": "13 rue madrid",
+      "telephone": "66445508",
+      "dateNaissance": "08/08/1987"
+    },
+   
   ],
   "enseignant": [
     {
@@ -100,7 +127,24 @@
       "email": "oumou@gmail.com",
       "adresse": "15 avn tn",
       "telephone": "88445500",
-      "dateNaissance": "01/01/1980"
+      "dateNaissance": "01/01/1980",
+      "cours": [
+        {
+          "id": "1",
+          "theme": "Réseau",
+          "nbreHeure": 8
+        },
+        {
+          "id": "2",
+          "theme": "Conception",
+          "nbreHeure": 16
+        },
+        {
+          "id": "5",
+          "theme": "Agilité",
+          "nbreHeure": 10
+        }
+      ]
     },
     {
       "id": "2",
@@ -109,7 +153,14 @@
       "email": "cheikh@gmail.com",
       "adresse": "15 avn tn",
       "telephone": "88445501",
-      "dateNaissance": "01/01/1980"
+      "dateNaissance": "01/01/1980",
+      "cours": [
+        {
+          "id": "3",
+          "theme": "Algorithmique",
+          "nbreHeure": 4
+        }
+      ]
     },
     {
       "id": "3",
@@ -182,6 +233,54 @@
       "adresse": "100 rue des lilas",
       "telephone": "88445509",
       "dateNaissance": "09/09/1979"
+    },
+    {
+      "id": "11",
+      "nom": "ade",
+      "prenom": "adfsq",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 8451236,
+      "dateNaissance": "2004-02-15",
+      "cours": []
+    },
+    {
+      "id": "12",
+      "nom": "zerd",
+      "prenom": "fuyhj",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 8534,
+      "dateNaissance": "1996-02-15",
+      "cours": [
+        {
+          "id": "1",
+          "theme": "Réseau",
+          "nbreHeure": 8
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "nom": "dss",
+      "prenom": "hjuykj",
+      "fonction": "",
+      "email": "",
+      "adresse": "",
+      "password": "",
+      "telephone": 85147632621,
+      "dateNaissance": "1996-12-15",
+      "cours": [
+        {
+          "id": "3",
+          "theme": "Algorithmique",
+          "nbreHeure": 4
+        }
+      ]
     }
   ],
   "cours": [
@@ -197,26 +296,15 @@
     },
     {
       "id": "3",
-      "theme": "Algo",
-      "nbreHeure": 14
+      "theme": "Algorithmique",
+      "nbreHeure": 4
     },
     {
       "id": "4",
       "theme": "Docker",
-      "nbreHeure": 10
+      "nbreHeure": 18
     },
-    {
-      "id": "5",
-      "theme": "electronique1",
-      "nbreHeure": 20
-
-    },
-    {
-      "id": "6",
-      "theme": "test",
-      "nbreHeure": 45
-
-    }
+   
   ],
   "note": [
     {
@@ -239,6 +327,8 @@
       "idCours": "1",
       "idEnseignant": "2",
       "valeur": 8
+
+
     }
   ]
 }
