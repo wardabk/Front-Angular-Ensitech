@@ -117,24 +117,7 @@
       "telephone": "66445508",
       "dateNaissance": "08/08/1987"
     },
-    {
-      "id": "11",
-      "nom": "dsd",
-      "prenom": "zezere",
-      "fonction": "",
-      "email": "",
-      "adresse": "",
-      "password": "",
-      "telephone": 7826452863,
-      "dateNaissance": "2000-12-15",
-      "cours": [
-        {
-          "id": "5",
-          "theme": "Agilité",
-          "nbreHeure": 10
-        }
-      ]
-    }
+   
   ],
   "enseignant": [
     {
@@ -321,11 +304,7 @@
       "theme": "Docker",
       "nbreHeure": 18
     },
-    {
-      "id": "5",
-      "theme": "Agilité",
-      "nbreHeure": 10
-    }
+   
   ],
   "note": [
     {
@@ -348,16 +327,8 @@
       "idCours": "1",
       "idEnseignant": "2",
       "valeur": 8
-    },
-    {
-      "id": "4",
-      "idEtudiant": "7",
-      "nomEtudiant": "Amir Sall",
-      "idCours": "4",
-      "themeCours": "Docker",
-      "idEnseignant": "4",
-      "nomEnseignant": "Cheikh Oumar Diakité",
-      "valeur": 12
+
+
     }
   ]
 }
