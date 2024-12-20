@@ -1,3 +1,5 @@
+// import { Cours } from "./cours/cours.interface";
+
 export interface User {
     id: string;
     prenom: string;
@@ -8,4 +10,5 @@ export interface User {
     password: string;
     telephone: string;
     dateNaissance: string;
+    // cours: Cours
 }

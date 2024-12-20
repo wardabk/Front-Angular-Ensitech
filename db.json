@@ -50,30 +50,6 @@
       "adresse": "45 rue Dakar",
       "telephone": "66445503",
       "dateNaissance": "03/03/1990"
-    },
-    {
-      "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04",
-      "adresse": "tn"
-    },
-    {
-      "id": null,
-      "nom": "jdir",
-      "prenom": "salwa ",
-      "telephone": "95784123",
-      "dateNaissance": "1990-04-04T00:00:00.000Z",
-      "adresse": "tunisie"
-    },
-    {
-      "id": null,
-      "nom": "ff",
-      "prenom": "gg",
-      "telephone": "555",
-      "dateNaissance": "2024-12-26",
-      "adresse": "ff"
     }
   ],
   "enseignant": [
@@ -112,60 +88,6 @@
       "adresse": "40 rue dakar",
       "telephone": "88445503",
       "dateNaissance": "03/03/1981"
-    },
-    {
-      "id": "5",
-      "prenom": "Ibrahime",
-      "nom": "Mbaye",
-      "email": "ibrahime@gmail.com",
-      "adresse": "30 rue de paris",
-      "telephone": "88445504",
-      "dateNaissance": "04/04/1978"
-    },
-    {
-      "id": "6",
-      "prenom": "Ndeye",
-      "nom": "Fall",
-      "email": "ndeye@gmail.com",
-      "adresse": "50 rue saint-louis",
-      "telephone": "88445505",
-      "dateNaissance": "05/05/1983"
-    },
-    {
-      "id": "7",
-      "prenom": "Moussa",
-      "nom": "Fall",
-      "email": "moussa@gmail.com",
-      "adresse": "12 rue des champs",
-      "telephone": "88445506",
-      "dateNaissance": "06/06/1986"
-    },
-    {
-      "id": "8",
-      "prenom": "Khadim",
-      "nom": "Gueye",
-      "email": "khadim@gmail.com",
-      "adresse": "15 rue des artisans",
-      "telephone": "88445507",
-      "dateNaissance": "07/07/1990"
-    },
-    {
-      "id": "9",
-      "prenom": "Seyni",
-      "nom": "Thiam",
-      "email": "seyni@gmail.com",
-      "adresse": "60 rue ankara",
-      "telephone": "88445508",
-      "dateNaissance": "08/08/1982"
-    },
-    {
-      "id": "10",
-      "prenom": "Aminata",
-      "nom": "Diagne",
-      "email": "aminata@gmail.com",
-      "adresse": "100 rue des lilas",
-      "telephone": "88445509",
-      "dateNaissance": "09/09/1979"
     }
   ],
   "cours": [
@@ -188,11 +110,6 @@
       "id": "4",
       "theme": "Docker",
       "nbreHeure": 10
-    },
-    {
-      "id": "5",
-      "theme": "electronique1",
-      "nbreHeure": 20
     }
   ],
   "note": [

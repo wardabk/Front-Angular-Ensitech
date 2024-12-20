@@ -13,6 +13,7 @@ Application web conçue pour centraliser et optimiser la gestion  d'une école d
  - Docker
 
 ## Contributeurs
+ - Aicha Benjdir
  - Jean Batiste Goumou
  - Warda Boubaker
  - Oumou Sow
@@ -22,5 +23,7 @@ Application web conçue pour centraliser et optimiser la gestion  d'une école d
  - docker build -t glowriousmou/ensitech-10kc-groupe4 .
 ## Push  Docker Image
  - docker push  glowriousmou/ensitech-10kc-groupe4
+## Pull  Docker Image
+ - docker pull  glowriousmou/ensitech-10kc-groupe4
 ## Run  Docker Image
  - docker run -p 4200:4200 -p 3000:3000   glowriousmou/ensitech-10kc-groupe4

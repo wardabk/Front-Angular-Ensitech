@@ -14,8 +14,8 @@ export class EnseignantService {
 
   constructor(private http: HttpClient) { }
 
-  getAllEnseignant(): Observable<User[]> {
-    return this.http.get<User[]>(this.apiUrl);
+  getAllEnseignant(): Observable<any[]> {
+    return this.http.get<any[]>(this.apiUrl);
   }
   deleteEnseignant(id: string): Observable<boolean> {
     const apiUrl = `http://localhost:3000/enseignant/${id}`;
@@ -30,11 +30,11 @@ export class EnseignantService {
       })
     );
   }
-  addEnseignant(enseignant: User): Observable<User> {
-    return this.http.post<User>(this.apiUrl, enseignant);
+  addEnseignant(enseignant: any): Observable<any> {
+    return this.http.post<any>(this.apiUrl, enseignant);
   }
-  editEnseignant(enseignant: User): Observable<User> {
+  editEnseignant(enseignant: any): Observable<any> {
     // const id = Number(enseignant.id);
-    return this.http.put<User>(`${this.apiUrl}/${enseignant.id}`, enseignant);
+    return this.http.put<any>(`${this.apiUrl}/${enseignant.id}`, enseignant);
   }
 }
